@@ -13,42 +13,86 @@
 <script src="./script/IE9.js"></script>
 <![endif]-->
 <script src="./script/jquery.bxslider.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
 ;$(function(){
-	//gallerySlide();
+	productSlide();
 
-	/* Gallery Slide */
-	function gallerySlide() {
-		if ($('#gallerySlide > li').length > 3){
-			$('#gallerySlide').removeClass('init');
-			_sponSlider = $('#gallerySlide').bxSlider({
-				slideWidth :	251,
-				slideMargin :	45,
-				auto :			true,
+	/* product Slide */
+	function productSlide() {
+		if ($('#productSlide > li').length > 2){
+			$('#productSlide').removeClass('init');
+			_sponSlider = $('#productSlide').bxSlider({
+				slideWidth :	560,
+				slideMargin :	20,
+				auto :				true,
 				autoHover :		true,
-				autoControls :	false,
-				pager :			false,
+				autoControls:	false,
+				pager :				true,
 				controls :		true,
-				pause :			2000,
-				speed :			600,
-				minSlides :		4,
-				maxSlides :		4,
+				pause :				2000,
+				speed :				600,
+				minSlides :		2,
+				maxSlides :		2,
 				moveSlides :	1
 			});
 		}
 	}
+});
+</script>
+<script>
+;$(function(){
+	/* GoogoleMap Asynchronously Loading the API */
+	google.maps.event.addDomListener(window, 'load', initialize);
 
-	if ($('#visualSlide > li').length > 1){
-		_visualSlider = $('#visualSlide').bxSlider({
-			auto :			true,
-			autoHover :		true,
-			autoControls :	true,
-			pager :			true,
-			controls :		false,
-			pause :			3000,
-			speed :			600
-		});
-	}
+  function initialize() {
+		if($('#map-area').length) {
+			//구글 맵 옵션 설정
+	    var mapOptions = {
+				disableDefaultUI : true, //기본 UI 사용 여부
+				disableDoubleClickZoom : true, //더블클릭 중심으로 확대 사용 여부
+				draggable : true, //지도 드래그 이동 사용 여부
+				keyboardShortcuts : true, //키보드 단축키 사용 여부
+			//	maxZoom : 18, //최대 줌
+				minZoom : 1, //최소 줌
+	      zoom : 19, //기본 확대율
+	      center : new google.maps.LatLng(37.5156778, 127.0213856), // 지도 중앙 위치
+	      scrollwheel : true, //마우스 휠로 확대 축소 사용 여부
+	      mapTypeControl : false //맵 타입 컨트롤 사용 여부
+	    };
+
+			//구글 맵을 사용할 타겟
+			var map = new google.maps.Map(document.getElementById('map-area'), mapOptions);
+			//마커 이미지 설정
+	    var image = './images/icon_marker.png';
+			//마커 설정
+	    var marker = new google.maps.Marker({
+        map : map,
+        position : map.getCenter(), //마커 위치
+        icon : image, //마커 이미지
+				//info : '말풍선 내용',
+				title : '패스트 캠퍼스 본관'
+	    });
+
+			// 말풍선 안에 들어갈 내용
+			var content = '<dl class="google-map-cont"><dt>패스트 캠퍼스 본관</dt><dd>서울특별시 강남구 논현1동 2-9</dd><dd><a href="http://www.fastcampus.co.kr/" target="_blank" title="새 창(탭) 열림">http://www.fastcampus.co.kr/</a></dd></dl>';
+
+      // 마커를 클릭했을 때의 이벤트. 말풍선 보임
+      var infowindow = new google.maps.InfoWindow({
+				content: content
+			});
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+
+			//리사이즈에 따른 마커 위치
+	    google.maps.event.addDomListener(window, 'resize', function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+	    });
+    }
+  }
 });
 </script>
 </head>
@@ -119,150 +163,110 @@
 				<h1>Products</h1>
 				<div class="slide-area">
 					<!--
-						슬라이드 사이즈 : 560(W) * 450(H)
-						이미지 사이즈 : 560(W) * 540(H)
+						슬라이드 사이즈 : 560(W) * 540(H)
+						이미지 사이즈 : 560(W) * 450(H)
 					-->
 					<ul id="productSlide" class="init">
 						<li>
-							<a href="#" title="product AA 상품 자세히 보기">
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$89</dd>
 								</dl>
 							</a>
 						</li>
 						<li>
-							<a href="#" title="product AA 상품 자세히 보기">
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$189</dd>
 								</dl>
 							</a>
 						</li>
-						<!-- <li>
-							<a href="#" title="product AA 상품 자세히 보기">
+						<li>
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$289</dd>
 								</dl>
 							</a>
 						</li>
 						<li>
-							<a href="#" title="product AA 상품 자세히 보기">
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$389</dd>
 								</dl>
 							</a>
 						</li>
 						<li>
-							<a href="#" title="product AA 상품 자세히 보기">
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$489</dd>
 								</dl>
 							</a>
 						</li>
 						<li>
-							<a href="#" title="product AA 상품 자세히 보기">
+							<a class="slide-item" href="#" title="product AA 상품 자세히 보기">
 								<dl>
 									<dt>
 										<span class="category">Category</span>
-										<span class="product-name">Product Name</span>
+										<span class="list-subj">Product Name</span>
 									</dt>
-									<dd><img src="../images/thumb_default3.png" alt="product AA"></dd>
+									<dd class="product-img"><img src="./images/thumb_default3.png" alt="product AA"></dd>
 									<dd class="price">$589</dd>
 								</dl>
 							</a>
-						</li> -->
+						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-
-<style>
-.section1 {padding:60px 0;}
-.section1 .btn-area {margin:45px 0 110px;}
-.section1 .flexbox-list {text-align:left; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.3);}
-.section1 .flexbox-list li {width:367px;}
-.section2. .init {}
-
-.section4 .slide-area .bx-controls-direction a {position:absolute; top:50%; width:78px; height:78px; margin-top:-39px; overflow:hidden; text-indent:-999px;}
-.section4 .slide-area .bx-controls-direction .bx-prev {left:0; background:url('../images/btn_prev.png') 50% 50% no-repeat;}
-.section4 .slide-area .bx-controls-direction .bx-next {right:0; background:url('../images/btn_next.png') 50% 50% no-repeat;}
-
-.row1 .col1 .bx-wrapper .bx-controls {position:absolute; bottom:20px; left:20px;}
-.row1 .col1 .bx-pager {float:left;}
-.row1 .col1 .bx-pager .bx-pager-item {float:left; margin-right:8px;}
-.row1 .col1 .bx-pager .bx-pager-item a {display:block; height:17px; width:17px; overflow:hidden; text-indent:-99999px; background:url('/image/main/slide_pager.png') 50% 0 no-repeat;}
-.row1 .col1 .bx-pager .bx-pager-item a.active {background-position:50% -50px;}
-</style>
 		<section class="section3">
 			<div class="section-cont">
-				<h1 class="hidden">Lorem ipsum dolor.</h1>
+				<h1>Our Services</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to<br> follow him, led the way to an adjoining hall.</p>
 				<ul class="flexbox-list">
 					<li>
-						<dl>
-							<dt>
-								<em>3600</em>
-								<span>Clients</span>
-							</dt>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared.</p>
-							</dd>
+						<dl class="with-picture">
+							<dt>First One</dt>
+							<dd class="pic"><img src="./images/thumb_default4.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>
-								<em>25</em>
-								<span>Products</span>
-							</dt>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared.</p>
-							</dd>
+						<dl class="with-picture">
+							<dt>Second One</dt>
+							<dd class="pic"><img src="./images/thumb_default4.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>
-								<em>24K</em>
-								<span>Sales</span>
-							</dt>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared.</p>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<em>116</em>
-								<span>Sales</span>
-							</dt>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared.</p>
-							</dd>
+						<dl class="with-picture">
+							<dt>Third One</dt>
+							<dd class="pic"><img src="./images/thumb_default4.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
 						</dl>
 					</li>
 				</ul>
@@ -270,113 +274,74 @@
 		</section>
 		<section class="section4">
 			<div class="section-cont">
-				<h1>Look What We’ve Got</h1>
-				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				<h1>Blog</h1>
 				<ul class="flexbox-list">
 					<li>
-						<dl>
-							<dt>First One</dt>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						<dl class="with-picture">
+							<dt>
+								<span class="category">Category</span>
+								<span class="list-subj">The Guide To Living Creatively</span>
+							</dt>
+							<dd class="pic"><img src="./images/thumb_default5.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>Second One</dt>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						<dl class="with-picture">
+							<dt>
+								<span class="category">Category</span>
+								<span class="list-subj">The Guide To Living Creatively</span>
+							</dt>
+							<dd class="pic"><img src="./images/thumb_default5.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>Third One</dt>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						<dl class="with-picture">
+							<dt>
+								<span class="category">Category</span>
+								<span class="list-subj">The Guide To Living Creatively</span>
+							</dt>
+							<dd class="pic"><img src="./images/thumb_default5.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="with-picture">
+							<dt>
+								<span class="category">Category</span>
+								<span class="list-subj">The Guide To Living Creatively</span>
+							</dt>
+							<dd class="pic"><img src="./images/thumb_default5.png" alt="Lorem ipsum picture"></dd>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
 						</dl>
 					</li>
 				</ul>
+
+				<div class="btn-area">
+					<a href="#" class="btn btn-bg" title="Lorem ipsum 블로그로 이동">Button</a>
+				</div>
 			</div>
 		</section>
 		<section class="section5">
 			<div class="section-cont">
-				<h1>Stories</h1>
-				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
-				<ul class="flexbox-list">
-					<li>
-						<dl>
-							<dt>The Guide To Living Creatively</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>Article Name</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>The Guide To Living Creatively</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
-							</dd>
-						</dl>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<section class="section6">
-			<div class="section-cont">
-				<h1>Team</h1>
-				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to<br> follow him, led the way to an adjoining hall.</p>
-				<ul class="flexbox-list">
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-				</ul>
+				<h1>Let’s Get In Touch</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall. It was evidently a court-room.</p>
+				<form action="javascript:alert('test alert Text');">
+					<fieldset>
+						<legend>테스트 지역 입력</legend>
+						<div class="btn-area">
+							<input class="input-item" type="text" name="location1" placeholder="Input Field Text" title="주소지 입력">
+							<input class="input-item" type="text" name="location2" placeholder="Input Field Text" title="상세 주소지 입력">
+							<button type="submit" class="btn btn-bg">Button</button>
+						</div>
+					</fieldset>
+				</form>
+
+				<!-- 구글맵 영역 -->
+				<div id="map-area" class="map-area">
+
+				</div>
 			</div>
 		</section>
 	</div>
