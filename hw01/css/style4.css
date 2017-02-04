@@ -117,7 +117,7 @@ footer {padding:60px 0; text-align:center;}
 .section5 .btn-area .btn,
 .section5 .btn-area .input-item {margin:0;}
 .section5 .btn-area .input-item {width:235px;}
-.section5 .map-area {overflow:hidden; height:340px;}
+.section5 .map-area {overflow:hidden; height:340px; background:url('../images/googlemap_area.png') 50% 50% repeat;}
 .google-map-cont {padding:5px 0; font-size:1.6rem; color:#333; text-align:left;}
 .google-map-cont dt {font-weight:bold;}
 .google-map-cont dd {margin-top:0.5em}
