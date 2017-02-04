@@ -13,7 +13,7 @@
 <script src="./script/IE9.js"></script>
 <![endif]-->
 <script src="./script/jquery.bxslider.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
 ;$(function(){
 	productSlide();
@@ -45,54 +45,54 @@
 	/* GoogoleMap Asynchronously Loading the API */
 	google.maps.event.addDomListener(window, 'load', initialize);
 
-  function initialize() {
+	function initialize() {
 		if($('#map-area').length) {
 			//구글 맵 옵션 설정
-	    var mapOptions = {
+			var mapOptions = {
 				disableDefaultUI : true, //기본 UI 사용 여부
 				disableDoubleClickZoom : true, //더블클릭 중심으로 확대 사용 여부
 				draggable : true, //지도 드래그 이동 사용 여부
 				keyboardShortcuts : true, //키보드 단축키 사용 여부
 			//	maxZoom : 18, //최대 줌
 				minZoom : 1, //최소 줌
-	      zoom : 19, //기본 확대율
-	      center : new google.maps.LatLng(37.5156778, 127.0213856), // 지도 중앙 위치
-	      scrollwheel : true, //마우스 휠로 확대 축소 사용 여부
-	      mapTypeControl : false //맵 타입 컨트롤 사용 여부
-	    };
+				zoom : 19, //기본 확대율
+				center : new google.maps.LatLng(37.5156778, 127.0213856), // 지도 중앙 위치
+				scrollwheel : true, //마우스 휠로 확대 축소 사용 여부
+				mapTypeControl : false //맵 타입 컨트롤 사용 여부
+			};
 
 			//구글 맵을 사용할 타겟
 			var map = new google.maps.Map(document.getElementById('map-area'), mapOptions);
 			//마커 이미지 설정
-	    var image = './images/icon_marker.png';
+			var image = './images/icon_marker.png';
 			//마커 설정
-	    var marker = new google.maps.Marker({
-        map : map,
-        position : map.getCenter(), //마커 위치
-        icon : image, //마커 이미지
+			var marker = new google.maps.Marker({
+				map : map,
+				position : map.getCenter(), //마커 위치
+				icon : image, //마커 이미지
 				//info : '말풍선 내용',
 				title : '패스트 캠퍼스 본관'
-	    });
+			});
 
 			// 말풍선 안에 들어갈 내용
 			var content = '<dl class="google-map-cont"><dt>패스트 캠퍼스 본관</dt><dd>서울특별시 강남구 논현1동 2-9</dd><dd><a href="http://www.fastcampus.co.kr/" target="_blank" title="새 창(탭) 열림">http://www.fastcampus.co.kr/</a></dd></dl>';
 
-      // 마커를 클릭했을 때의 이벤트. 말풍선 보임
-      var infowindow = new google.maps.InfoWindow({
+			// 마커를 클릭했을 때의 이벤트. 말풍선 보임
+			var infowindow = new google.maps.InfoWindow({
 				content: content
 			});
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map,marker);
-      });
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			});
 
 			//리사이즈에 따른 마커 위치
-	    google.maps.event.addDomListener(window, 'resize', function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, 'resize');
-        map.setCenter(center);
-	    });
-    }
-  }
+			google.maps.event.addDomListener(window, 'resize', function() {
+				var center = map.getCenter();
+				google.maps.event.trigger(map, 'resize');
+				map.setCenter(center);
+			});
+		}
+	}
 });
 </script>
 </head>
