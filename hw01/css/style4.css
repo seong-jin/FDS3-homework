@@ -64,13 +64,13 @@ footer {padding:60px 0; text-align:center;}
 .social-link li {display:inline-block; margin:0 5px;}
 
 
-
 /* container */
 .section-cont h1 {font-size:4.4rem; letter-spacing:-0.02em;}
-.section1 .section-cont h1 {font-size:5.2rem;}
 .section-cont p {opacity:0.6;}
 .section-cont dt {font-weight:bold; font-size:1.4rem; letter-spacing:0.25em; text-transform:uppercase;}
+
 .section1 {padding:60px 0;}
+.section1 .section-cont h1 {font-size:5.2rem;}
 .section1 .btn-area {margin:45px 0 110px;}
 .section1 .flexbox-list {text-align:left; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.3);}
 .section1 .flexbox-list li {width:367px;}
@@ -122,8 +122,6 @@ footer {padding:60px 0; text-align:center;}
 .google-map-cont dt {font-weight:bold;}
 .google-map-cont dd {margin-top:0.5em}
 .google-map-cont dd a {text-decoration:underline;}
-
-
 
 
 /* 공통 스타일 */

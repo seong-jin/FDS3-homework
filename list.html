@@ -15,7 +15,7 @@ header, #container {padding:10px; font-size:1.4rem;}
 header{margin-bottom:1.5em;}
 header h1 {color:#333; font-size:3rem;}
 .publishing-rule {font-size:1.2rem;}
-.publishing-rule dl{padding:1em; margin-top:1em; background:#f7f7f7;}
+.publishing-rule dl{padding-top:1em; background:#f7f7f7;}
 .publishing-rule dt {margin-bottom:.6em; font-size:1.4rem; font-weight:bold;}
 .publishing-rule dd {padding-left:1.5em;}
 .publishing-rule dd ul {list-style-type: square;}
@@ -25,35 +25,46 @@ header h1 {color:#333; font-size:3rem;}
 .total{font-weight:bold; font-style:italic;}
 .total+section{margin-top:1em;}
 section{margin-top:3em;}
-.section-title{padding:.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
-section table {width:100%; border-spacing:0; border:0; border-collapse:collapse;}
-section caption {position:absolute; left:-9999em;}
-section table thead th {border-top:none; border-bottom:none;}
-section table th, table td {padding:0.4em; word-break:break-all; border:1px solid #ccc;}
-section table th {padding:.6em 0; color:#333; background-color:#eee; font-size:1.3rem; text-align:center;}
-section table td {text-align:left;}
-section table td.stat,
-section table td.date {text-align:center;}
-section table .date {width:7em;}
-section table .stat {width:3em;}
-section table .overcoloring {background:#f6f6f6 !important;}
+.section-title{padding:0.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
+.section-comment{padding:1em 0.3em 0.3em; margin:0; border:1px solid #03427e;}
+.section-comment div, .section-comment p {padding:0 .5em;}
+.section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; margin-top:1em; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
+.section-comment dl + dl {margin-top:-1px;}
+.section-comment dl:hover {background:#f6f6f6;}
+.section-comment dt, .section-comment dd {display:table-cell; padding:0 0.5em; vertical-align:middle;}
+.section-comment dt {width:30%; font-weight:bold;}
+.section-comment dd {border-left:1px dotted #ccc;}
+.section-comment dd ul{margin:0; list-style:none;}
+.section-comment dd li::before {content:'- ';}
+em {color:#c82026; margin:0 2px;}
+table {width:100%; border-spacing:0; border:0; border-collapse:collapse;}
+caption {position:absolute; left:-9999em;}
+table thead th {border-top:none; border-bottom:none;}
+table th, table td {padding:0.4em; word-break:break-all; border:1px solid #ccc;}
+table th {padding:.6em 0; color:#333; background-color:#eee; font-size:1.3rem; text-align:center;}
+table td {text-align:left;}
+table td.stat, table td.date {text-align:center;}
+table .date {width:7em;}
+table .date del {display:block;}
+table .stat {width:3em;}
+table .overcoloring {background:#f6f6f6 !important;}
 table tr.none, table tr.none th, table tr.none td {display:none;}
-section table .note dl {font-style:normal; margin:10px auto; padding:1em; background-color:#eee; width:90%; color:#222; font-size:0.90em; line-height:1.2;}
-section table .overcoloring .note dl {background-color:#fff;}
-section table .note dt {margin-top:.8em; font-weight:bold;}
-section table .note dt:first-child {margin-top:0;}
-section table .note dd {padding-left:1.5em; text-indent:-0.9em; margin-top:.5em;}
-section table .note dd::before {content:'- '; opacity:0.7;}
-section table ul {list-style:none; margin:0; padding:0 20px; font-style:italic;}
-section table em {color:#c82026; margin:0 4px;}
-section table tbody.remove td {background-color:#ccc;}
-section table .line-through {text-decoration:line-through}
+table .note dl {font-style:normal; box-sizing:border-box; padding:1em; background-color:#eee; color:#222; font-size:0.90em; line-height:1.2;}
+table .overcoloring .note dl {background-color:#fff;}
+table .note dt {margin-top:.8em; font-weight:bold;}
+table .note dt:first-child {margin-top:0;}
+table .note dd {padding-left:1.5em; text-indent:-0.9em; margin-top:.5em;}
+table .note dd::before {content:'- '; opacity:0.7;}
+table ul {list-style:none; margin:0; padding:0 20px; font-style:italic;}
+table tbody.remove td {background-color:#ccc;}
+table .line-through {text-decoration:line-through}
 </style>
 </head>
 <body>
 <div class="wrapper">
 	<header>
 		<h1>패스트 캠퍼스 프론트엔드개발 School 3기 과제 목록</h1>
+
 		<div class="publishing-rule">
 			<dl>
 				<dt>웹퍼블리싱 정보</dt>
@@ -84,17 +95,37 @@ section table .line-through {text-decoration:line-through}
 
 	<div id="container">
 		<p class="total"></p>
-
 		<section>
 			<h1 class="section-title">과제 1</h1>
 			<div class="content">
+				<div class="section-comment">
+					<p>컨텐츠 내용 및 title, 주석 등 해당 언어 변경 부분은 <em>기획</em>에서 처리</p>
+					<dl>
+						<dt>언어설정</dt>
+						<dd>lang="ko"</dd>
+					</dl>
+					<dl>
+						<dt>CSS</dt>
+						<dd>
+							<ul>
+								<li>과제 1 공통 : normalize.css</li>
+								<li>페이지 별 CSS 별도 사용 : style1.css, style2.css, style3.css, ...</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>PSD 폴더</dt>
+						<dd>01 Pages__wireframe</dd>
+					</dl>
+				</div>
+
 				<table>
 					<caption>과제 1 내용 상세 내역</caption>
 					<thead>
 						<tr>
-							<th scope="col" class="tit">2depth</th>
-							<th scope="col">3depth</th>
-							<th scope="col">4depth or tab</th>
+							<th scope="col" class="tit">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth or tab</th>
 							<th scope="col" class="note">PSD 명</th>
 							<th scope="col" class="path">path</th>
 							<th scope="col" class="file">file</th>
@@ -112,18 +143,13 @@ section table .line-through {text-decoration:line-through}
 							<td class="path">hw01</td>
 							<td class="file"><a href="#">index1</a></td>
 							<td class="stat">●</td>
-							<td class="date">2017-01-31</td>
+							<td class="date"><del>2017-01-31</del> 2017-02-06</td>
 							<td class="note">
 								<dl>
-									<dt>[카테고리 공통] 언어설정</dt>
-									<dd>lang="ko"</dd>
-									<dd>컨텐츠 내용 및 title, 주석 등 해당 언어 변경 부분은 <em>기획</em>에서 처리</dd>
-									<dt>[카테고리 공통] CSS</dt>
-									<dd>normalize.css : 모든 사이트 공통</dd>
-									<dd>style1.css : 페이지 별 CSS 별도 사용 (style2.css, style3.css, ...)</dd>
 									<dt>레이아웃 관련</dt>
-									<dd>세로 가운데 배치 : <em>display:table / table-cell</em> 사용, <a href="http://caniuse.com/#search=table-cell" target="_blank">적용 가능 범위 IE8+</a>
-									</dd>
+									<dd>세로 가운데 배치 : <em>display:table / table-cell</em> 사용, <a href="http://caniuse.com/#search=table-cell" target="_blank">적용 가능 범위 IE8+</a></dd>
+									<dt>수정사항</dt>
+									<dd>2017-02-06 : 푸터 SNS 대체텍스트 수정</dd>
 								</dl>
 							</td>
 						</tr>
@@ -135,7 +161,7 @@ section table .line-through {text-decoration:line-through}
 							<td class="path"></td>
 							<td class="file"><a href="#">index2</a></td>
 							<td class="stat">●</td>
-							<td class="date">2017-01-31</td>
+							<td class="date"><del>2017-01-31</del> 2017-02-06</td>
 							<td class="note">
 								<dl>
 									<dt>레이아웃 관련</dt>
@@ -145,6 +171,8 @@ section table .line-through {text-decoration:line-through}
 									<dd><em>공통사항</em> : 모든 스크립트 head 안에 위치, 추후 위치 조정</dd>
 									<dd>hambuger 메뉴 스크립트 작업 X</dd>
 									<dd>Gallery 슬라이드 (실행 : <em>gallerySlide();</em>)</dd>
+									<dt>수정사항</dt>
+									<dd>2017-02-06 : 푸터 SNS 대체텍스트 수정</dd>
 								</dl>
 							</td>
 						</tr>
@@ -156,9 +184,12 @@ section table .line-through {text-decoration:line-through}
 							<td class="path"></td>
 							<td class="file"><a href="#">index3</a></td>
 							<td class="stat">●</td>
-							<td class="date">2017-01-31</td>
+							<td class="date"><del>2017-01-31</del> 2017-02-06</td>
 							<td class="note">
-
+								<dl>
+									<dt>수정사항</dt>
+									<dd>2017-02-06 : 푸터 SNS 대체텍스트 수정</dd>
+								</dl>
 							</td>
 						</tr>
 						<tr>
@@ -169,13 +200,15 @@ section table .line-through {text-decoration:line-through}
 							<td class="path"></td>
 							<td class="file"><a href="#">index4</a></td>
 							<td class="stat">●</td>
-							<td class="date"><del>2017-02-03</del> 2017-02-04</td>
+							<td class="date"><del>2017-02-03</del> 2017-02-07</td>
 							<td class="note">
 								<dl>
 									<dt>JS</dt>
 									<dd>hambuger 메뉴 스크립트 작업 X</dd>
 									<dd>Products 슬라이드 (실행 : <em>productSlide();</em>)</dd>
 									<dd><del>구글맵 적용</del> Google API Key 값 문제로 에러 발생. 해당 스크립트 주석처리 후, CSS로 배경 이미지 처리.</dd>
+									<dt>수정사항</dt>
+									<dd>2017-02-06 : 푸터 SNS 대체텍스트 수정</dd>
 								</dl>
 							</td>
 						</tr>
@@ -186,7 +219,7 @@ section table .line-through {text-decoration:line-through}
 							<td>Page #5.psd</td>
 							<td class="path"></td>
 							<td class="file"><a href="#">index5</a></td>
-							<td class="stat">○</td>
+							<td class="stat">△</td>
 							<td class="date"></td>
 							<td class="note">
 
@@ -199,7 +232,7 @@ section table .line-through {text-decoration:line-through}
 							<td>Page #6.psd</td>
 							<td class="path"></td>
 							<td class="file"><a href="#">index6</a></td>
-							<td class="stat">○</td>
+							<td class="stat">△</td>
 							<td class="date"></td>
 							<td class="note">
 
@@ -217,9 +250,9 @@ section table .line-through {text-decoration:line-through}
 					<caption>과제 2 내용 상세 내역</caption>
 					<thead>
 						<tr>
-							<th scope="col" class="tit">2depth</th>
-							<th scope="col">3depth</th>
-							<th scope="col">4depth or tab</th>
+							<th scope="col" class="tit">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth or tab</th>
 							<th scope="col" class="note">PSD 명</th>
 							<th scope="col" class="path">path</th>
 							<th scope="col" class="file">file</th>
