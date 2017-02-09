@@ -12,6 +12,33 @@
 <!--[if lt IE 9]>
 <script src="./script/IE9.js"></script>
 <![endif]-->
+<script src="./script/jquery.bxslider.min.js"></script>
+<script>
+;$(function(){
+	portfolioSlide();
+
+	/* Portfolio Slide */
+	function portfolioSlide() {
+		if ($('#portfolioSlide > li').length > 3){
+			$('#portfolioSlide').removeClass('init');
+			_sponSlider = $('#portfolioSlide').bxSlider({
+				slideWidth :	366,
+				slideMargin :	20,
+				auto :				true,
+				autoHover :		true,
+				autoControls:	false,
+				pager :				false,
+				controls :		true,
+				pause :				2000,
+				speed :				600,
+				minSlides :		3,
+				maxSlides :		3,
+				moveSlides :	1
+			});
+		}
+	}
+});
+</script>
 </head>
 <body>
 
@@ -119,155 +146,128 @@
 					<ul id="portfolioSlide" class="init">
 						<li>
 							<a href="#" title="First Project 자세히 보기">
-								<dl>
+								<dl class="with-picture">
 									<dt>
 										<span class="tit-name">First One</span>
 										<span class="tit-cmt">Project Details</span>
 									</dt>
 									<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-									<dd class="img"><img src="./images/thumb_default7.png" alt="First Project thumbnail"></dd>
+									<dd class="pic"><img src="./images/thumb_default7.png" alt="First Project thumbnail"></dd>
 								</dl>
 							</a>
 						</li>
 						<li>
 							<a href="#" title="Second Project 자세히 보기">
-								<dl>
+								<dl class="with-picture">
 									<dt>
 										<span class="tit-name">Second One</span>
 										<span class="tit-cmt">Project Details</span>
 									</dt>
 									<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-									<dd class="img"><img src="./images/thumb_default7.png" alt="Second Project thumbnail"></dd>
+									<dd class="pic"><img src="./images/thumb_default7.png" alt="Second Project thumbnail"></dd>
 								</dl>
 							</a>
 						</li>
 						<li>
 							<a href="#" title="Third Project 자세히 보기">
-								<dl>
+								<dl class="with-picture">
 									<dt>
 										<span class="tit-name">Third One</span>
 										<span class="tit-cmt">Project Details</span>
 									</dt>
 									<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-									<dd class="img"><img src="./images/thumb_default7.png" alt="Third Project thumbnail"></dd>
+									<dd class="pic"><img src="./images/thumb_default7.png" alt="Third Project thumbnail"></dd>
 								</dl>
 							</a>
 						</li>
-						<!-- <li>
+						<li>
 							<a href="#" title="Fourth Project 자세히 보기">
-								<dl>
+								<dl class="with-picture">
 									<dt>
 										<span class="tit-name">Fourth One</span>
 										<span class="tit-cmt">Project Details</span>
 									</dt>
 									<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-									<dd class="img"><img src="./images/thumb_default7.png" alt="Fourth Project thumbnail"></dd>
+									<dd class="pic"><img src="./images/thumb_default7.png" alt="Fourth Project thumbnail"></dd>
 								</dl>
 							</a>
-						</li> -->
+						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-
-<style>
-.section4 .section-cont {width:1300px;}
-.section4 .section-cont > p {width:754px; margin:0 auto 50px;}
-.section4 .slide-area {posistion:relative; padding:0 80px;}
-.section4 .init {display:flex; justify-content:space-around;}
-#portfolioSlide > li {width:340px;}
-#portfolioSlide > li > a {display:block; background:#fff;}
-#portfolioSlide > li > a:hover,
-#portfolioSlide > li > a:focus {box-shadow:0 0 10px 10px #fafafa; text-decoration:none;}
-.section4 .slide-area dl {}
-.section4 .slide-area dt {}
-.section4 .slide-area dt .tit-name {}
-.section4 .slide-area dt .tit-cmt {}
-.section4 .slide-area dd {}
-.section4 .slide-area .img {position:absolute; top:0; left:0; width:100%;}
-.section4 .slide-area .img img {max-width:100%;}
-</style>
-
 		<section class="section5">
 			<div class="section-cont">
-				<h1>Stories</h1>
-				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				<h1>The Crew</h1>
 				<ul class="flexbox-list">
 					<li>
-						<dl>
-							<dt>The Guide To Living Creatively</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+						<dl class="with-picture">
+							<dt>
+								<span class="name">John Doe</span>
+								<span class="job">CEO</span>
+							</dt>
+							<dd class="pic"><img src="./images/photo_default2.png" alt="John Doe photo"></dd>
+							<dd class="social-link">
+								<a class="slack" href="#" title="John Doe 의 Slack 바로가기 (새 창)" target="_blank">Slack</a>
+								<a class="twitter" href="#" title="John Doe 의 Twitter 바로가기 (새 창)" target="_blank">Twitter</a>
+								<a class="facebook" href="#" title="John Doe 의 Facebook 바로가기 (새 창)" target="_blank">Facebook</a>
 							</dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>Article Name</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+						<dl class="with-picture">
+							<dt>
+								<span class="name">Piter Jones</span>
+								<span class="job">CTO</span>
+							</dt>
+							<dd class="pic"><img src="./images/photo_default2.png" alt="Piter Jones photo"></dd>
+							<dd class="social-link">
+								<a class="slack" href="#" title="Piter Jones 의 Slack 바로가기 (새 창)" target="_blank">Slack</a>
+								<a class="twitter" href="#" title="Piter Jones 의 Twitter 바로가기 (새 창)" target="_blank">Twitter</a>
+								<a class="facebook" href="#" title="Piter Jones 의 Facebook 바로가기 (새 창)" target="_blank">Facebook</a>
 							</dd>
 						</dl>
 					</li>
 					<li>
-						<dl>
-							<dt>The Guide To Living Creatively</dt>
-							<dd class="pic"><img src="./images/thumb_default2.png" alt="Lorem ipsum picture"></dd>
-							<dd>
-								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+						<dl class="with-picture">
+							<dt>
+								<span class="name">Sam Smith</span>
+								<span class="job">CFO</span>
+							</dt>
+							<dd class="pic"><img src="./images/photo_default2.png" alt="Sam Smith photo"></dd>
+							<dd class="social-link">
+								<a class="slack" href="#" title="Sam Smith 의 Slack 바로가기 (새 창)" target="_blank">Slack</a>
+								<a class="twitter" href="#" title="Sam Smith 의 Twitter 바로가기 (새 창)" target="_blank">Twitter</a>
+								<a class="facebook" href="#" title="Sam Smith 의 Facebook 바로가기 (새 창)" target="_blank">Facebook</a>
 							</dd>
 						</dl>
 					</li>
-				</ul>
-			</div>
-		</section>
-		<section class="section6">
-			<div class="section-cont">
-				<h1>Team</h1>
-				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to<br> follow him, led the way to an adjoining hall.</p>
-				<ul class="flexbox-list">
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+					<li>
+						<dl class="with-picture">
+							<dt>
+								<span class="name">Lorem Ipsum</span>
+								<span class="job">COO</span>
+							</dt>
+							<dd class="pic"><img src="./images/photo_default2.png" alt="Lorem Ipsum photo"></dd>
+							<dd class="social-link">
+								<a class="slack" href="#" title="Lorem Ipsum 의 Slack 바로가기 (새 창)" target="_blank">Slack</a>
+								<a class="twitter" href="#" title="Lorem Ipsum 의 Twitter 바로가기 (새 창)" target="_blank">Twitter</a>
+								<a class="facebook" href="#" title="Lorem Ipsum 의 Facebook 바로가기 (새 창)" target="_blank">Facebook</a>
+							</dd>
 						</dl>
 					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
-						</dl>
-					</li>
-					<li tabindex="0">
-						<dl>
-							<dt>John Doe</dt>
-							<dd class="photo"><img src="./images/photo_default2.png" alt="Lorem ipsum photo"></dd>
-							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+					<li>
+						<dl class="with-picture">
+							<dt>
+								<span class="name">Jone Johns</span>
+								<span class="job">CPO</span>
+							</dt>
+							<dd class="pic"><img src="./images/photo_default2.png" alt="Jone Johns photo"></dd>
+							<dd class="social-link">
+								<a class="slack" href="#" title="Jone Johns 의 Slack 바로가기 (새 창)" target="_blank">Slack</a>
+								<a class="twitter" href="#" title="Jone Johns 의 Twitter 바로가기 (새 창)" target="_blank">Twitter</a>
+								<a class="facebook" href="#" title="Jone Johns 의 Facebook 바로가기 (새 창)" target="_blank">Facebook</a>
+							</dd>
 						</dl>
 					</li>
 				</ul>
@@ -275,36 +275,49 @@
 		</section>
 	</div>
 	<!-- //container -->
-
 	<hr>
 
 	<!-- footer -->
 	<footer>
-		<div class="footer-cont">
-			<dl>
-				<dt><a class="footer-logo" href="/">blokk</a></dt>
-				<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-			</dl>
-			<dl>
-				<dt>Contact Us</dt>
-				<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
-			</dl>
-			<dl>
-				<dt>Subscribe</dt>
-				<dd><p>At half-past eight the door opened.</p></dd>
-				<dd class="form-area">
-					<form action="javascript:alert('test alert Text');">
-						<fieldset>
-							<legend>입력 폼</legend>
-							<div class="txt-with-btn">
-								<input class="txt-item" type="text" placeholder="Input Field Text" title="Input Field Text">
-								<button class="btn-item" type="submit">BUTTON</button>
-							</div>
-						</fieldset>
-					</form>
-				</dd>
-			</dl>
-		</div>
+		<section class="contact-section">
+			<div class="footer-cont">
+				<h1>Contact Us</h1>
+				<p>At half-past eight the door opened<br>
+					The policeman appeared.<br>
+					Requesting them to follow him.<br>
+					Led the way to an adjoining hall.</p>
+				<ul class="social-link">
+					<li><a class="slack" href="#" title="blokk 사 Slack 바로가기 (새 창)" target="_blank">Slack</a></li>
+					<li><a class="twitter" href="#" title="blokk 사 Twitter 바로가기 (새 창)" target="_blank">Twitter</a></li>
+					<li><a class="facebook" href="#" title="blokk 사 Facebook 바로가기 (새 창)" target="_blank">Facebook</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="multi-link">
+			<div class="footer-cont">
+				<dl>
+					<dt><a class="footer-logo" href="/">blokk</a></dt>
+					<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
+				</dl>
+				<dl>
+					<dt>First Col</dt>
+					<dd><a href="#">Menu List Item</a></dd>
+					<dd><a href="#">Menu List Item</a></dd>
+				</dl>
+				<dl>
+					<dt>Second Col</dt>
+					<dd><a href="#">Menu List Item</a></dd>
+					<dd><a href="#">Menu List Item</a></dd>
+					<dd><a href="#">Menu List Item</a></dd>
+				</dl>
+				<dl>
+					<dt>Third Col</dt>
+					<dd><a href="#">Menu List Item</a></dd>
+					<dd><a href="#">Menu List Item</a></dd>
+					<dd><a href="#">Menu List Item</a></dd>
+				</dl>
+			</div>
+		</section>
 	</footer>
 	<!-- //footer -->
 </div>
