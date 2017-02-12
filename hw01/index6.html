@@ -53,9 +53,12 @@
 		<section class="section1">
 			<div class="section-cont">
 				<div class="default-area">
+				<div class="default-area">
 					<h1>Meet Blokk Kit</h1>
 					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall. It was evidently a court-room, and a crowd of Europeans and natives already occupied the rear of the apartment.</p>
-					<button type="button" title="클릭시, 동영상 재생"><img src="./images/btn_play2.png" alt="재생"></button>
+					<div>
+						<button type="button" title="클릭시, 동영상 재생"><img src="./images/btn_play2.png" alt="재생"></button>
+					</div>
 				</div>
 				<div class="player-area">
 					<!--
@@ -259,33 +262,51 @@
 
 	<!-- footer -->
 	<footer>
-		<div class="footer-cont">
-			<dl>
-				<dt><a class="footer-logo" href="/">blokk</a></dt>
-				<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
-			</dl>
-			<dl>
-				<dt>Contact Us</dt>
-				<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
-			</dl>
-			<dl>
-				<dt>Subscribe</dt>
-				<dd><p>At half-past eight the door opened.</p></dd>
-				<dd class="form-area">
-					<form action="javascript:alert('test alert Text');">
-						<fieldset>
-							<legend>입력 폼</legend>
-							<div class="txt-with-btn">
-								<input class="txt-item" type="text" placeholder="Input Field Text" title="Input Field Text">
-								<button class="btn-item" type="submit">BUTTON</button>
-							</div>
-						</fieldset>
-					</form>
-				</dd>
-			</dl>
-		</div>
+		<section class="footer-section1">
+			<h1 class="hidden">Footer Navigation &amp; Application Download</h1>
+			<div class="section-cont">
+				<ul class="footer-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Stories</a></li>
+					<li><a href="#">Company</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<div class="footer-download-link">
+					<span>Download for free</span>
+					<a href="#" title="앱스토어에서 다운로드"><img src="./images/btn_app_store.png" alt="앱스토어"></a>
+					<a href="#" title="구글플레이에서 다운로드"><img src="./images/btn_google_play.png" alt="구글 플레이"></a>
+				</ul>
+			</div>
+		</section>
+		<section class="footer-section2">
+			<h1 class="hidden">copyright</h1>
+			<div class="section-cont">
+				<p>&copy; Blokk UI Kit. At half-past eight the door opened, the policeman appeared, and, requesting them.</p>
+			</div>
+		</section>
 	</footer>
 	<!-- //footer -->
 </div>
+
+<style>
+.footer-section1 .section-cont {display:flex; justify-content:space-between;}
+.footer-nav, .footer-download-link {display:flex;}
+.footer-nav {text-align:left;}
+.footer-download-link {text-align:right;}
+.footer-nav li {display:inline-block;}
+.footer-nav a,
+.footer-download-link a,
+.footer-download-link span {display:inline-block; height:40px; line-height:40px;}
+.footer-nav a {padding:0 10px;}
+.footer-download-link a,
+.footer-download-link span {margin-left:15px;}
+.footer-download-link span {opacity:0.7;}
+footer .footer-section2 {padding:20px 0;}
+
+
+</style>
+
 </body>
 </html>
