@@ -26,9 +26,9 @@ header h1 {color:#333; font-size:3rem;}
 .total+section{margin-top:1em;}
 section{margin-top:3em;}
 .section-title{padding:0.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
-.section-comment{padding:1em 0.3em 0.3em; margin:0; border:1px solid #03427e;}
-.section-comment div, .section-comment p {padding:0 .5em;}
-.section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; margin-top:1em; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
+.section-comment{padding:0.3em; margin:0; border:1px solid #03427e;}
+.section-comment div, .section-comment p {padding:1em .5em;}
+.section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
 .section-comment dl + dl {margin-top:-1px;}
 .section-comment dl:hover {background:#f6f6f6;}
 .section-comment dt, .section-comment dd {display:table-cell; padding:0 0.5em; vertical-align:middle;}
@@ -95,6 +95,182 @@ table .line-through {text-decoration:line-through}
 
 	<div id="container">
 		<p class="total"></p>
+
+		<section>
+			<h1 class="section-title">과제 4 - 접근성 테이블 만들기</h1>
+			<div class="content">
+				<div class="section-comment">
+					<!-- <p>RWD, Sass 사용</p> -->
+					<!-- <dl>
+						<dt></dt>
+						<dd></dd>
+					</dl> -->
+				</div>
+
+				<table>
+					<caption>과제 4 내용 상세 내역</caption>
+					<thead>
+						<tr>
+							<th scope="col" class="tit">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth or tab</th>
+							<th scope="col" class="note">PSD 명</th>
+							<th scope="col" class="path">path</th>
+							<th scope="col" class="file">file</th>
+							<th scope="col" class="stat">state</th>
+							<th scope="col" class="date">date</th>
+							<th scope="col" class="note">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tit">페이지 1</td>
+							<td></td>
+							<td></td>
+							<td>
+
+							</td>
+							<td class="path">hw04</td>
+							<td class="file"><a href="#">index</a></td>
+							<td class="stat">○</td>
+							<td class="date">2017-02-13</td>
+							<td class="note">
+								<dl>
+									<dt>미완 목록</dt>
+									<dd>스타일, 웹폰트 </dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section>
+			<h1 class="section-title">과제 3 - RWD 실습</h1>
+			<div class="content">
+				<div class="section-comment">
+					<p>현재 작업중</p>
+					<!-- <dl>
+						<dt>RWD breakpoint</dt>
+						<dd>Mobile : 480px , Tablet : 760px , Desktop : 1200px (960px)</dd>
+					</dl> -->
+					<dl>
+						<dt>Grid Layout System</dt>
+						<dd>각 미디어별 Grid Layout 적용</dd>
+					</dl>
+					<!-- <dl>
+						<dt>CSS (Sass 사용)</dt>
+						<dd>
+							<ul>
+								<li>normalize.css</li>
+								<li>style.css (style.sass)</li>
+								<li>_base-setting.sass , _base-font.sass , _media-query.sass</li>
+							</ul>
+						</dd>
+					</dl> -->
+					<dl>
+						<dt>JavaScript</dt>
+						<dd>
+							<ul>
+								<li>polyfill ( flexibility.js , ie9.js )</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>PSD 폴더</dt>
+						<dd>02 Grid-System__Wireframe</dd>
+					</dl>
+				</div>
+
+				<table>
+					<caption>과제 3 내용 상세 내역</caption>
+					<thead>
+						<tr>
+							<th scope="col" class="tit">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth or tab</th>
+							<th scope="col" class="note">PSD 명</th>
+							<th scope="col" class="path">path</th>
+							<th scope="col" class="file">file</th>
+							<th scope="col" class="stat">state</th>
+							<th scope="col" class="date">date</th>
+							<th scope="col" class="note">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tit">페이지 1</td>
+							<td></td>
+							<td></td>
+							<td>
+								grid-system-mobile-wireframe.psd<br>
+								grid-system-tablet-wireframe.psd<br>
+								grid-system-desktop-wireframe.psd
+							</td>
+							<td class="path">hw03</td>
+							<td class="file"><a href="#">index</a></td>
+							<td class="stat">△</td>
+							<td class="date"><del>2017-02-13</del></td>
+							<td class="note">
+								<dl>
+									<dt>Grid Layout 확인</dt>
+									<dd>페이지 로딩 후, <em>Ctrl + g</em>를 누르면 토글 형태로 확인 가능</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section>
+			<h1 class="section-title">과제 2 - Sass Mixin 제작</h1>
+			<div class="content" style="display:none">
+				<div class="section-comment">
+					<p><em>추후 정리 예정</em></p>
+					<!-- <dl>
+						<dt></dt>
+						<dd></dd>
+					</dl> -->
+				</div>
+				<table>
+					<caption>과제 2 내용 상세 내역</caption>
+					<thead>
+						<tr>
+							<th scope="col" class="tit">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth or tab</th>
+							<th scope="col" class="note">PSD 명</th>
+							<th scope="col" class="path">path</th>
+							<th scope="col" class="file">file</th>
+							<th scope="col" class="stat">state</th>
+							<th scope="col" class="date">date</th>
+							<th scope="col" class="note">note</th>
+						</tr>
+					</thead>
+					<tbody class="remove">
+						<tr>
+							<td class="tit"></td>
+							<td></td>
+							<td></td>
+							<td>PSD 없음</td>
+							<td class="path">hw02</td>
+							<td class="file"><a href="#"> </a></td>
+							<td class="stat">△</td>
+							<td class="date"></td>
+							<td class="note">
+								<!-- <dl>
+									<dt></dt>
+									<dd></dd>
+								</dl> -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
 		<section>
 			<h1 class="section-title">과제 1</h1>
 			<div class="content">
@@ -243,50 +419,10 @@ table .line-through {text-decoration:line-through}
 							<td>Page #6.psd</td>
 							<td class="path"></td>
 							<td class="file"><a href="#">index6</a></td>
-							<td class="stat">●</td>
-							<td class="date"></td>
-							<td class="note">
-
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-
-		<section>
-			<h1 class="section-title">과제 2</h1>
-			<div class="content">
-				<table>
-					<caption>과제 2 내용 상세 내역</caption>
-					<thead>
-						<tr>
-							<th scope="col" class="tit">1depth</th>
-							<th scope="col">2depth</th>
-							<th scope="col">3depth or tab</th>
-							<th scope="col" class="note">PSD 명</th>
-							<th scope="col" class="path">path</th>
-							<th scope="col" class="file">file</th>
-							<th scope="col" class="stat">state</th>
-							<th scope="col" class="date">date</th>
-							<th scope="col" class="note">note</th>
-						</tr>
-					</thead>
-					<tbody class="remove">
-						<tr>
-							<td class="tit"></td>
-							<td></td>
-							<td></td>
-							<td> .psd</td>
-							<td class="path">hw02</td>
-							<td class="file"><a href="#"> </a></td>
 							<td class="stat">△</td>
 							<td class="date"></td>
 							<td class="note">
-								<!-- <dl>
-									<dt></dt>
-									<dd></dd>
-								</dl> -->
+
 							</td>
 						</tr>
 					</tbody>

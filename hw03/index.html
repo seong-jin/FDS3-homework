@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Responsive Web Design Homework</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+<!--[if IE 9]>
+<script src="./script/polyfill/flexibility.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="./script/polyfill/IE9.js"></script>
+<script src="./script/polyfill/flexibility.js"></script>
+<![endif]-->
+<script src="https://use.fontawesome.com/c1f341f27c.js"></script>
+</head>
+<body>
+<dl id="skip-navigation">
+	<dt>바로가기 메뉴</dt>
+	<dd><a href="#container">본문 바로가기</a></dd>
+</dl>
+
+<div class="wrapper">
+	<!-- header -->
+	<header>
+		<div class="header-cont">
+		  <h1 class="logo">
+        <i class="fa fa-paint-brush" aria-hidden="true"></i><span>logo</span>
+      </h1>
+
+		  <!-- 추후 JS 처리 -->
+		  <button id="hamburger" type="button" data-open-text="전체메뉴 닫기" data-close-text="전체메뉴 열기" title="전체메뉴 열기">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <span class="burger-txt">전체메뉴 열기</span>
+      </button>
+
+		  <nav id="gnb">
+		    <h1 class="hidden">대메뉴</h1>
+		    <ul>
+		      <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+		    </ul>
+		  </nav>
+		</div>
+	</header>
+	<!-- //header -->
+	<hr>
+
+  <!-- container -->
+  <div id="container">
+    <section class="section1">
+      <div class="section-cont">
+        <h1>제목1</h1>
+
+      </div>
+    </section>
+    <section class="section2">
+      <div class="section-cont">
+        <h1>제목2</h1>
+
+      </div>
+    </section>
+    <section class="section3">
+      <div class="section-cont">
+        <h1>제목3</h1>
+
+      </div>
+    </section>
+    <section class="section4">
+      <div class="section-cont">
+        <h1>제목4</h1>
+
+      </div>
+    </section>
+    <section class="section5">
+      <div class="section-cont">
+        <h1>제목5</h1>
+
+      </div>
+    </section>
+  </div>
+  <!-- // container -->
+  <hr>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-cont">
+      <p class="copyright">Copyright &copy; 2016 Inyoung.</p>
+    </div>
+  </footer>
+  <!-- // footer -->
+</div>
+<script src="./script/toggleGrid.js"></script>
+</body>
+</html>

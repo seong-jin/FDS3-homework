@@ -1,0 +1,117 @@
+// 모바일 : 639 이하
+// 태블릿 : 640~768
+// 데스크탑 : 769 이상
+
+// media query break-point
+$bp-md-max: 768px;
+$bp-md-min: 640px;
+$bp-sm-max: $bp-md-min - 1;
+$bp-lg-min: $bp-md-max + 1;
+
+$sm: '(max-width: #{$bp-sm-max})';
+$md: '(min-width: #{$bp-md-min}) and (max-width: #{$bp-md-max})';
+$lg: '(min-width: #{$bp-lg-min})';
+
+@mixin mq($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}
+
+// Grid Layout
+$lg-base: 960px;
+$lg-fixed: true;
+$lg-min-width: $lg-base; // 1200px
+$lg-col-num: 12;
+$lg-inner-gutter: 10px;
+
+$md-base: 640px;
+$md-fixed: false;
+$md-col-num: 8;
+$md-inner-gutter: 10px;
+$md-base-padding: 20px;
+
+$sm-base: 320px;
+$sm-fixed: false;
+$sm-base-padding: $md-base-padding;
+$sm-col-num: 2;
+$sm-inner-gutter: 10px;
+// $sm-column: 4;
+// $sm-inner-gutter: 10px;
+
+@each $obj in ('$lg-', '$md-', '$sm-') {
+  $num: #{$obj}col-num;
+  $fixed: #{$obj}fixed;
+  @debug (#{$obj}base / $num);
+  @for $i from 1 through $num {
+    [class*='#{$obj}col-#{$i}'] {
+      width: '#{$obj}base' / $num * $i;
+
+    }
+  }
+}
+
+
+
+/* 레이아웃 */
+.wrapper {
+  position: relative;
+  min-width: $sm-base;
+  @include mq($md) {
+    min-width: $md-base;
+  }
+  @include mq($lg) {
+    min-width: $lg-min-width;
+  }
+}
+
+.full-column {
+  width: 100%;
+}
+
+.header-cont, .footer-cont, .section-cont {
+  padding:0 20px;
+  @include mq($md) {
+  }
+  @include mq($lg) {
+  }
+  @include mq($lg) {
+    width: $lg-base;
+    padding: 0;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  @extend %clearfix;
+}
+
+
+/* Toggle Grid Layer */
+#toggleGridLayer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 960px;
+  height: 100%;
+  margin-left: -480px;
+  &.grid {
+    display: block;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 960px;
+      height: 100%;
+      background:
+        linear-gradient(90deg,
+          transparent 12.5%, rgba(44, 103, 197, 0.2) 12.5%,
+          rgba(44, 103, 197, 0.2) 87.5%, transparent 87.5%),
+        linear-gradient(transparent 23px, rgba(44, 103, 197, 0.6) 23px);
+      background-size: 80px 1px, 1px 24px;
+    }
+  }
+}
