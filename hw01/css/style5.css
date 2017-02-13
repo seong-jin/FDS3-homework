@@ -180,7 +180,7 @@ a.btn {text-decoration:none;}
 .btn:hover, .btn.focus {opacity:0.9;}
 .btn.btn-bg {color:#fff; background:#03a67b;}
 .reverse-bg .btn {border-color:#fff; color:#03a67b; background:#fff;}
-.util-menu .btn {padding:0 35px; letter-spacing:0; text-transform:normal; border-width:1px;}
+.util-menu .btn {padding:0 35px; letter-spacing:0; text-transform:none; border-width:1px;}
 .btn-area {margin-top:30px;}
 .btn-area .btn {margin-left:15px;}
 .btn-area .btn:first-child {margin-left:0;}
