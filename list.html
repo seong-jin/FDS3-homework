@@ -2,69 +2,19 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>웹 작업현황판 | 패스트 캠퍼스 프론트엔드개발 School 3기 과제 목록</title>
+<title>과제 | 패스트 캠퍼스 프론트엔드개발 School 3기</title>
 <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-<style>
-* {margin:0; padding:0;}
-html {font:10px/1.5 'Noto Sans', 'Malgun Gothic', helvetica, 'Apple Gothic', Tahoma, sans-serif;}
-body {min-width:800px;background:#fff; color:#666;}
-a {color:#0075e5; text-decoration:none;}
-a:focus, a:hover, a:active {text-decoration:underline;}
-
-header, #container {padding:10px; font-size:1.4rem;}
-header{margin-bottom:1.5em;}
-header h1 {color:#333; font-size:3rem;}
-.publishing-rule {font-size:1.2rem;}
-.publishing-rule dl{padding:0.5em 0.8em; margin-top:1em; background:#f7f7f7;}
-.publishing-rule dt {margin-bottom:.6em; font-size:1.4rem; font-weight:bold;}
-.publishing-rule dd {padding-left:1.5em;}
-.publishing-rule dd ul {list-style-type: square;}
-.publishing-rule dd li {margin-top:.2em;}
-.publishing-rule dd li:first-child {margin-top:0;}
-#container{padding-bottom:5em;}
-.total{font-weight:bold; font-style:italic;}
-.total+section{margin-top:1em;}
-section{margin-top:3em;}
-.section-title{padding:0.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
-.section-comment{padding:0.3em; margin:0; border:1px solid #03427e;}
-.section-comment div, .section-comment p {padding:1em .5em;}
-.section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
-.section-comment dl + dl {margin-top:-1px;}
-.section-comment dl:hover {background:#f6f6f6;}
-.section-comment dt, .section-comment dd {display:table-cell; padding:0 0.5em; vertical-align:middle;}
-.section-comment dt {width:30%; font-weight:bold;}
-.section-comment dd {border-left:1px dotted #ccc;}
-.section-comment dd ul{margin:0; list-style:none;}
-.section-comment dd li::before {content:'- ';}
-em {color:#c82026; margin:0 2px;}
-table {width:100%; border-spacing:0; border:0; border-collapse:collapse;}
-caption {position:absolute; left:-9999em;}
-table thead th {border-top:none; border-bottom:none;}
-table th, table td {padding:0.4em; word-break:break-all; border:1px solid #ccc;}
-table th {padding:.6em 0; color:#333; background-color:#eee; font-size:1.3rem; text-align:center;}
-table td {text-align:left;}
-table td.stat, table td.date {text-align:center;}
-table .date {width:7em;}
-table .date del {display:block;}
-table .stat {width:3em;}
-table .overcoloring {background:#f6f6f6 !important;}
-table tr.none, table tr.none th, table tr.none td {display:none;}
-table .note dl {font-style:normal; box-sizing:border-box; padding:1em; background-color:#eee; color:#222; font-size:0.90em; line-height:1.2;}
-table .overcoloring .note dl {background-color:#fff;}
-table .note dt {margin-top:.8em; font-weight:bold;}
-table .note dt:first-child {margin-top:0;}
-table .note dd {padding-left:1.5em; text-indent:-0.9em; margin-top:.5em;}
-table .note dd::before {content:'- '; opacity:0.7;}
-table ul {list-style:none; margin:0; padding:0 20px; font-style:italic;}
-table tbody.remove td {background-color:#ccc;}
-table .line-through {text-decoration:line-through}
-</style>
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <div class="wrapper">
 	<header>
-		<h1>패스트 캠퍼스 프론트엔드개발 School 3기 과제 목록</h1>
-
+		<h1>과제 | 패스트 캠퍼스 프론트엔드개발 School 3기</h1>
+		<ul class="nav">
+			<li class="on"><a href="./list.html">과제</a></li>
+			<li><a href="./list2.html">실습</a></li>
+			<li><a href="./list3.html">컴퓨터공학개론 자료</a></li>
+		</ul>
 		<div class="publishing-rule">
 			<dl>
 				<dt>웹퍼블리싱 정보</dt>
@@ -97,60 +47,10 @@ table .line-through {text-decoration:line-through}
 		<p class="total"></p>
 
 		<section>
-			<h1 class="section-title">과제 4 - 접근성 테이블 만들기</h1>
-			<div class="content">
-				<div class="section-comment">
-					<!-- <p>RWD, Sass 사용</p> -->
-					<!-- <dl>
-						<dt></dt>
-						<dd></dd>
-					</dl> -->
-				</div>
-
-				<table>
-					<caption>과제 4 내용 상세 내역</caption>
-					<thead>
-						<tr>
-							<th scope="col" class="tit">1depth</th>
-							<th scope="col">2depth</th>
-							<th scope="col">3depth or tab</th>
-							<th scope="col" class="note">PSD 명</th>
-							<th scope="col" class="path">path</th>
-							<th scope="col" class="file">file</th>
-							<th scope="col" class="stat">state</th>
-							<th scope="col" class="date">date</th>
-							<th scope="col" class="note">note</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="tit">페이지 1</td>
-							<td></td>
-							<td></td>
-							<td>
-
-							</td>
-							<td class="path">hw04</td>
-							<td class="file"><a href="#">index</a></td>
-							<td class="stat">●</td>
-							<td class="date">2017-02-13</td>
-							<td class="note">
-								<dl>
-									<dt>미완 목록</dt>
-									<dd>스타일, 웹폰트 </dd>
-								</dl>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-
-		<section>
 			<h1 class="section-title">과제 3 - RWD 실습</h1>
 			<div class="content">
 				<div class="section-comment">
-					<p>현재 작업중</p>
+					<p><em>현재 작업중</em></p>
 					<!-- <dl>
 						<dt>RWD breakpoint</dt>
 						<dd>Mobile : 480px , Tablet : 760px , Desktop : 1200px (960px)</dd>
@@ -168,7 +68,7 @@ table .line-through {text-decoration:line-through}
 								<li>_base-setting.sass , _base-font.sass , _media-query.sass</li>
 							</ul>
 						</dd>
-					</dl> -->
+					</dl>
 					<dl>
 						<dt>JavaScript</dt>
 						<dd>
@@ -176,7 +76,7 @@ table .line-through {text-decoration:line-through}
 								<li>polyfill ( flexibility.js , ie9.js )</li>
 							</ul>
 						</dd>
-					</dl>
+					</dl> -->
 					<dl>
 						<dt>PSD 폴더</dt>
 						<dd>02 Grid-System__Wireframe</dd>
@@ -208,7 +108,7 @@ table .line-through {text-decoration:line-through}
 								grid-system-tablet-wireframe.psd<br>
 								grid-system-desktop-wireframe.psd
 							</td>
-							<td class="path">hw03</td>
+							<td class="path">homework/hw03</td>
 							<td class="file"><a href="#">index</a></td>
 							<td class="stat">△</td>
 							<td class="date"><del>2017-02-13</del></td>
@@ -325,7 +225,7 @@ table .line-through {text-decoration:line-through}
 							<td></td>
 							<td></td>
 							<td>Page #1.psd</td>
-							<td class="path">hw01</td>
+							<td class="path">homework/hw01</td>
 							<td class="file"><a href="#">index1</a></td>
 							<td class="stat">●</td>
 							<td class="date"><del>2017-01-31</del> 2017-02-06</td>
@@ -433,96 +333,8 @@ table .line-through {text-decoration:line-through}
 </div>
 
 
-
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-jQuery.fn.stat = function (options) {
-	var settings = jQuery.extend({
-		total: '.total',
-		title: 'h1.section-title',
-		content: 'div.content',
-		files: 'tbody:not(.remove) tr',
-		stat: 'td.stat',
-		completed: '●',
-		index: 0,
-		openAll: true,
-		speed: 'fast'
-	}, options),
-	all_sections = this;
-	return this.each(function(){
-		var self = this,
-			$self = $(self),
-			title_text = [],
-			completed = 0;
-		self.section_title = $(settings.title, $self);
-		self.content = $(settings.content, $self);
-		self.files = $(settings.files, $self);
-		self.files.each(function(){
-			var stat = $(settings.stat, this);
-			stat.each(function(){
-				var text = $(this).text();
-				if (text && (text === settings.completed)) {
-					completed++;
-				}
-			});
-		});
-		title_text = [self.section_title.text(), ' (',completed,'/',self.files.length,')',' ',': 진행율 ',Math.round(completed/self.files.length*100),'%',];
-		self.section_title.text(title_text.join(''));
-		self.section_title.on('click', function(){
-			self.content.slideToggle();
-		});
-
-		//total
-		var completedAll = 0;
-		$(settings.stat).each(function(){
-			var text = $(this).text();
-			if (text && (text == settings.completed)) {
-				completedAll++;
-			}
-		});
-		$(settings.total).text('Total : '+completedAll+'/'+$(settings.files).length+'pages (전체 진행율 '+Math.round(completedAll/$(settings.files).length*100)+'%)');
-	});
-};
-
-;$(function(){
-	$('section').stat();
-
-	//over-coloring
-	$('section tbody tr').mouseover(function() {
-		$(this).addClass('overcoloring');
-	}).mouseout(function() {
-		$(this).removeClass('overcoloring');
-	});
-	autoLink();
-});
-
-var autoLink = function(){
-	jQuery.each($('section'), function(i){
-		var lan = $(this).find('tbody tr');
-	//	var path = '/polyschool/web';
-		var path3 = $(this).find('tbody tr').eq(0).find('.path').text();
-		jQuery.each(lan, function(j){
-			if ($(this).find('.stat').text() == '●' || $(this).find('.stat').text() == '○'){
-				if ($(this).find('.file a').hasClass('manual')) return;
-				var defPath = path3,
-					currentPath = $(this).find('.path').text();
-				if (currentPath == '/' || currentPath == '') {
-					path3 = defPath;
-				} else {
-					path3 = './' + currentPath + '/';
-				}
-				$(this).find('.file a').attr({
-					'href' : path3 + $(this).find('.file a').text() + '.html',
-					'target' : '_blank',
-					'title' : '새 창 열림'
-				});
-			} else {
-				$(this).find('.file a').on('click', function(){return false;});
-			}
-		});
-	});
-};
-</script>
+<script src="./script/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="ko"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>과제 01-2</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/style2.css">
+<script src="./script/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="./script/IE9.js"></script>
+<![endif]-->
+<script src="./script/jquery.bxslider.min.js"></script>
+<script>
+;$(function(){
+	gallerySlide();
+
+	/* Gallery Slide */
+	function gallerySlide() {
+		if ($('#gallerySlide > li').length > 3){
+			$('#gallerySlide').removeClass('init');
+			_sponSlider = $('#gallerySlide').bxSlider({
+				slideWidth :	251,
+				slideMargin :	45,
+				auto :				true,
+				autoHover :		true,
+				autoControls:	false,
+				pager :				false,
+				controls :		true,
+				pause :				2000,
+				speed :				600,
+				minSlides :		4,
+				maxSlides :		4,
+				moveSlides :	1
+			});
+		}
+	}
+});
+</script>
+
+</head>
+<body>
+
+<dl id="skip-navigation">
+	<dt>바로가기 메뉴</dt>
+	<dd><a href="#container">본문 바로가기</a></dd>
+</dl>
+<div class="wrapper">
+	<!-- header -->
+	<header>
+		<h1 class="logo"><a href="/">blokk</a></h1>
+
+		<!-- 해당 언어로 타이틀 내용 변경 필요 -->
+		<ul class="util-menu">
+			<li class="current"><a href="#" title="영문 사이트 바로가기">Eng</a></li>
+			<li><a href="#" title="독일어 사이트 바로가기">De</a></li>
+		</ul>
+
+		<!-- 추후 JS 처리 -->
+		<input id="hamburger" type="button" data-open-text="전체메뉴 닫기" data-close-text="전체메뉴 열기" title="전체메뉴 열기" value="전체메뉴 열기">
+
+		<nav id="gnb">
+			<h1 class="hidden">대메뉴</h1>
+			<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Stories</a></li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- //header -->
+	<hr>
+
+
+	<!-- container -->
+	<div id="container">
+		<section class="section1">
+			<div class="section-cont">
+				<h1>Blokk Wireframe Kit</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him,<br> led the way to an adjoining hall.</p>
+				<div class="btn-area">
+					<button class="icon-btn" type="button"><span>icon button</span></button>
+				</div>
+
+				<div class="item-area">
+					<img src="./images/mockup_browser.png" alt="브라우저 목업">
+				</div>
+			</div>
+		</section>
+		<section class="section2">
+			<div class="section-cont">
+				<h1 class="hidden">동영상 재생</h1>
+				<div class="default-area">
+					<div>
+						<button type="button" title="클릭시, 동영상 재생"><img src="./images/btn_play2.png" alt="재생"></button>
+					</div>
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				</div>
+				<div class="player-area">
+					<!--
+					동영상 재생부분
+					-->
+				</div>
+			</div>
+		</section>
+		<section class="section3">
+			<div class="section-cont">
+				<h1>Features</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to <br>follow him, led the way to an adjoining hall.</p>
+
+				<div class="feature-detail">
+					<div class="txt-area">
+						<dl>
+							<dt>First One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						</dl>
+						<dl>
+							<dt>Second One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p></dd>
+						</dl>
+					</div>
+					<div class="img-Area">
+						<img src="./images/mockup_iphone.png" alt="아이폰 목업">
+					</div>
+					<div class="txt-area">
+						<dl>
+							<dt>Third One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
+						</dl>
+						<dl>
+							<dt>Fourth One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section4">
+			<div class="section-cont">
+				<h1>Gallery</h1>
+				<div class="slide-area">
+					<!-- 슬라이드 사이즈 : 251(W) * 251(H) -->
+					<ul id="gallerySlide" class="init">
+						<li><a href="#" title="슬라이드 1 상세 페이지 바로가기"><img src="./images/thumb_default.png" alt=""></a></li>
+						<li><a href="#" title="슬라이드 2 상세 페이지 바로가기"><img src="./images/thumb_default.png" alt=""></a></li>
+						<li><a href="#" title="슬라이드 3 상세 페이지 바로가기"><img src="./images/thumb_default.png" alt=""></a></li>
+						<li><a href="#" title="슬라이드 4 상세 페이지 바로가기"><img src="./images/thumb_img01.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="section5">
+			<div class="section-cont">
+				<h1>Find Your Store</h1>
+
+				<ul class="store-map">
+					<li class="store-location01" tabindex="0">
+						<dl>
+							<dt>도슨 시티 - 캐나다</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location02" tabindex="0">
+						<dl>
+							<dt>브라질리아 - 브라질</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location03" tabindex="0">
+						<dl>
+							<dt>누크 - 그린란드</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location04" tabindex="0">
+						<dl>
+							<dt>카이로 - 이집트</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location05" tabindex="0">
+						<dl>
+							<dt>모스크바 - 러시아</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location06" tabindex="0">
+						<dl>
+							<dt>마닐라 - 필리핀</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li class="store-location07" tabindex="0">
+						<dl>
+							<dt>앨리스 스프링스 - 호주</dt>
+							<dd><p>At half-past eight the door opened. The policeman appeared. Requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+	<!-- //container -->
+
+	<hr>
+	<!-- footer -->
+	<footer>
+		<div class="footer-cont">
+			<dl>
+				<dt><a href="/">blokk</a></dt>
+				<dd><p>At half-past eight the door opened, the policeman appeared.</p></dd>
+			</dl>
+			<div class="footer-link-area">
+				<ul class="footer-navigation">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Stories</a></li>
+					<li><a href="#">Company</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="social-link">
+					<li><a class="slack" href="#" title="Blokk사 Slack 바로가기 (새 창)" target="_blank">Slack</a></li>
+					<li><a class="twitter" href="#" title="Blokk사 Twitter 바로가기 (새 창)" target="_blank">Twitter</a></li>
+					<li><a class="facebook" href="#" title="Blokk사 Facebook 바로가기 (새 창)" target="_blank">Facebook</a></li>
+					<li><a class="dribble" href="#" title="Blokk사 Dribble 바로가기 (새 창)" target="_blank">Dribble</a></li>
+					<li><a class="google-plus" href="#" title="Blokk사 Google Plus 바로가기 (새 창)" target="_blank">Google Plus</a></li>
+					<li><a class="instagram" href="#" title="Blokk사 Instagram 바로가기 (새 창)" target="_blank">Instagram</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+// 모바일 : 639 이하
+// 태블릿 : 640~768
+// 데스크탑 : 769 이상
+
+// media query break-point
+$bp-md-max: 768px;
+$bp-md-min: 640px;
+$bp-sm-max: $bp-md-min - 1;
+$bp-lg-min: $bp-md-max + 1;
+
+$sm: '(max-width: #{$bp-sm-max})';
+$md: '(min-width: #{$bp-md-min}) and (max-width: #{$bp-md-max})';
+$lg: '(min-width: #{$bp-lg-min})';
+
+@mixin mq($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}
+
+
+$lg-map: (
+  'prefix': 'lg',
+  'fixed': true,
+  'min-width': 960px,
+  'base': 960px,
+  'col-num': 12,
+  'inner-gutter': 10px,
+  'base-padding': 10px
+);
+$md-map: (
+  'prefix': 'md',
+  'fixed': false,
+  'min-width': 640px,
+  'base': 100%,
+  'col-num': 8,
+  'inner-gutter': 10px,
+  'base-padding': 20px
+);
+$sm-map: (
+  'prefix': 'sm',
+  'fixed': false,
+  'min-width': 320px,
+  'base': 100%,
+  'col-num': 4,
+  'inner-gutter': 10px,
+  'base-padding': 20px
+);
+$grid-list: ( $sm-map, $md-map, $lg-map );
+
+@each $grid in $grid-list {
+  $prefix: map-get($grid, 'prefix');
+  $fixed: map-get($grid, 'fixed');
+  $inner-gutter: map-get($grid, 'inner-gutter');
+  $num: map-get($grid, 'col-num');
+  $base: map-get($grid, 'base');
+  $col-width: $base / $num;
+
+  @for $i from 1 to $num {
+    .#{$prefix}-col-#{$i}of#{$num} {
+      width: $col-width * $i;
+    }
+  }
+  [class*="#{$prefix}-col-"] {
+    float: left;
+    padding-left: $inner-gutter;
+    padding-right: $inner-gutter;
+  }
+}
+
+
+
+/* 레이아웃 */
+.wrapper {
+  position: relative;
+  min-width: map-get($sm-map, 'min-width');
+  @include mq($md) {
+    min-width: map-get($md-map, 'min-width');
+  }
+  @include mq($lg) {
+    min-width: map-get($lg-map, 'min-width');
+  }
+}
+
+.full-column {
+  width: 100%;
+}
+
+.header-cont, .footer-cont, .section-cont {
+  padding:0 20px;
+  @include mq($md) {
+  }
+  @include mq($lg) {
+  }
+  @include mq($lg) {
+    width: map-get($lg-map, 'base');
+    padding: 0;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  @extend %clearfix;
+}
+
+
+/* Toggle Grid Layer */
+#toggleGridLayer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: map-get($lg-map, 'base');
+  height: 100%;
+  margin-left: map-get($lg-map, 'base') / 2;
+  &.grid {
+    display: block;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(90deg,
+          transparent 12.5%, rgba(44, 103, 197, 0.2) 12.5%,
+          rgba(44, 103, 197, 0.2) 87.5%, transparent 87.5%),
+        linear-gradient(transparent 23px, rgba(44, 103, 197, 0.6) 23px);
+      background-size: 80px 1px, 1px 24px;
+    }
+  }
+}

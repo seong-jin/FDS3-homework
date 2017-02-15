@@ -3,4 +3,9 @@
 
 
 
-[과제목록 바로가기](https://seong-jin.github.io/FDS3-homework/list.html)
+[과제 목록](https://seong-jin.github.io/FDS3-homework/list.html)
+
+[실습 목록 (아침 엑티비티 및 실습)](https://seong-jin.github.io/FDS3-homework/list2.html)
+
+[컴퓨터공학개론 관련자료 ](https://seong-jin.github.io/FDS3-homework/list3.html)
+
