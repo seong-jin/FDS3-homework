@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Responsive Web Design Homework</title>
+<link href="http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" type="text/css">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/style.css">
+<!--[if lt IE 9]>
+<script src="./script/IE9.js"></script>
+<![endif]-->
+
+<style>
+/* Grid-System 가이드 디자인 */
+#toggleGridLayer {
+  position: relative;
+  width: 1200px;
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+}
+#toggleGridLayer::before {
+  content: '';
+}
+#toggleGridLayer.grid::before {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(191, 64, 64, 0.3) 80%, rgba(0, 0, 0, 0) 80%), linear-gradient(rgba(0, 0, 0, 0) 26px, #26923f 26px);
+ background-size: 160px 1px, 1px 1.6875rem;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+
+
+</div>
+<script src="./script/toggleGrid.js"></script>
+</body>
+</html>

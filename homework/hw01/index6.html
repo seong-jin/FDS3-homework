@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="ko"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>과제 01-6</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/style6.css">
+<script src="./script/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="./script/IE9.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<dl id="skip-navigation">
+	<dt>바로가기 메뉴</dt>
+	<dd><a href="#container">본문 바로가기</a></dd>
+</dl>
+<div class="wrapper">
+	<!-- header -->
+	<header>
+		<h1 class="logo"><a href="/">blokk</a></h1>
+
+		<!-- 해당 언어로 타이틀 내용 변경 필요 -->
+		<ul class="util-menu">
+			<li class="current"><a href="#" title="영문 사이트 바로가기">Eng</a></li>
+			<li><a href="#" title="독일어 사이트 바로가기">De</a></li>
+		</ul>
+
+		<!-- 추후 JS 처리 -->
+		<input id="hamburger" type="button" data-open-text="전체메뉴 닫기" data-close-text="전체메뉴 열기" title="전체메뉴 열기" value="전체메뉴 열기">
+
+		<nav id="gnb">
+			<h1 class="hidden">대메뉴</h1>
+			<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Stories</a></li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- //header -->
+	<hr>
+
+	<!-- container -->
+	<div id="container">
+		<section class="section1">
+			<div class="section-cont">
+				<div class="default-area flex-column-list">
+					<h1>Meet Blokk Kit</h1>
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall. It was evidently a court-room, and a crowd of Europeans and natives already occupied the rear of the apartment.</p>
+					<button type="button" title="클릭시, 동영상 재생"><img src="./images/btn_play3.png" alt="재생"></button>
+				</div>
+				<div class="player-area">
+					<!--
+					동영상 재생부분
+					-->
+				</div>
+			</div>
+		</section>
+		<section class="section2">
+			<div class="section-cont flex-column-list">
+				<h1>Amazing Features</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				<ul class="flexbox-list">
+					<li>
+						<dl>
+							<dt>First One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Second One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Third One</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section3">
+			<div class="section-cont flex-column-list">
+				<h1>Weekly Price Change</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				<div class="img-wrap">
+					<img src="./images/img_graph.png" alt="Feb 1 $365">
+				</div>
+			</div>
+		</section>
+
+		<section class="section4">
+			<div class="section-cont flex-column-list">
+				<h1>What Our Users Say</h1>
+				<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+				<ul class="flexbox-list">
+					<li tabindex="0">
+						<dl>
+							<dt>
+								<span class="name">Robin jones</span>
+								<span class="job">Ceo</span>
+							</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an </p></dd>
+						</dl>
+					</li>
+					<li tabindex="0">
+						<dl>
+							<dt>
+								<span class="name">John Doe</span>
+								<span class="job">Manager At Apple</span>
+							</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an </p></dd>
+						</dl>
+					</li>
+					<li tabindex="0">
+						<dl>
+							<dt>
+								<span class="name">Smith jane</span>
+								<span class="job">Coo</span>
+							</dt>
+							<dd><p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an </p></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section5">
+			<div class="section-cont">
+				<h1>Pricing Tables</h1>
+				<ul class="flexbox-list">
+					<li>
+						<dl>
+							<dt>
+								<span class="level">Basic</span>
+								<span class="date">At half-past eight.</span>
+							</dt>
+							<dd>
+								<span class="money">
+									<span class="unit">$</span>
+									<span class="num">6</span>
+								</span>
+								<span class="month">per month</span>
+							</dd>
+							<dd>
+								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+							</dd>
+							<dd>
+								<table>
+									<caption><span class="hidden">Lorem ipsum dolor.</span></caption>
+									<tbody>
+										<tr>
+											<th scope="col">Users</th>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="col">Capacity</th>
+											<td>500 Gb</td>
+										</tr>
+										<tr>
+											<th scope="col">Backup</th>
+											<td>Not Availible</td>
+										</tr>
+										<tr>
+											<th scope="col">Support</th>
+											<td>Not Availible</td>
+										</tr>
+									</tbody>
+								</table>
+								<a href="#" class="btn" title="Basic 결제 페이지(탭)로 이동">button</a>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>
+								<span class="level">Advanced</span>
+								<span class="date">At half-past eight.</span>
+							</dt>
+							<dd>
+								<span class="money">
+									<span class="unit">$</span>
+									<span class="num">11</span>
+								</span>
+								<span class="month">per month</span>
+							</dd>
+							<dd>
+								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+							</dd>
+							<dd>
+								<table>
+									<caption><span class="hidden">Lorem ipsum dolor2.</span></caption>
+									<tbody>
+										<tr>
+											<th scope="col">Users</th>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="col">Capacity</th>
+											<td>500 Gb</td>
+										</tr>
+										<tr>
+											<th scope="col">Backup</th>
+											<td>Not Availible</td>
+										</tr>
+										<tr>
+											<th scope="col">Support</th>
+											<td>Not Availible</td>
+										</tr>
+									</tbody>
+								</table>
+								<a href="#" class="btn btn-bg" title="Advanced 결제 페이지(탭)로 이동">button</a>
+							</dd>
+						</dl>
+						<span class="badge"><img src="./images/badge_popular.png" alt="Popular"></span>
+					</li>
+					<li>
+						<dl>
+							<dt>
+								<span class="level">Professional</span>
+								<span class="date">At half-past eight3.</span>
+							</dt>
+							<dd>
+								<span class="money">
+									<span class="unit">$</span>
+									<span class="num">19</span>
+								</span>
+								<span class="month">per month</span>
+							</dd>
+							<dd>
+								<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+							</dd>
+							<dd>
+								<table>
+									<caption><span class="hidden">Lorem ipsum dolor.</span></caption>
+									<tbody>
+										<tr>
+											<th scope="col">Users</th>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="col">Capacity</th>
+											<td>500 Gb</td>
+										</tr>
+										<tr>
+											<th scope="col">Backup</th>
+											<td>Not Availible</td>
+										</tr>
+										<tr>
+											<th scope="col">Support</th>
+											<td>Not Availible</td>
+										</tr>
+									</tbody>
+								</table>
+								<a href="#" class="btn" title="Professional 결제 페이지(탭)로 이동">button</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section6">
+			<div class="section-cont">
+				<h1>The Guide To Living Creatively</h1>
+				<div class="txt-area">
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall. It was evidently a court-room, and a crowd of Europeans and natives already occupied the rear of the apartment.</p>
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall. It was evidently a court-room, and a crowd of Europeans.</p>
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+					<p>At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+					<p>10.10.2017</p>
+				</div>
+				<div class="btn-area">
+					<a href="#" class="btn">Button</a>
+				</div>
+
+			</div>
+		</section>
+	</div>
+	<!-- //container -->
+
+	<hr>
+
+	<!-- footer -->
+	<footer>
+		<section class="footer-section1">
+			<h1 class="hidden">Footer Navigation &amp; Application Download</h1>
+			<div class="section-cont">
+				<ul class="footer-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Stories</a></li>
+					<li><a href="#">Company</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<div class="footer-download-link">
+					<span>Download for free</span>
+					<a href="#" title="앱스토어에서 다운로드"><img src="./images/btn_app_store.png" alt="앱스토어"></a>
+					<a href="#" title="구글플레이에서 다운로드"><img src="./images/btn_google_play.png" alt="구글 플레이"></a>
+				</div>
+			</div>
+		</section>
+		<section class="footer-section2">
+			<h1 class="hidden">copyright</h1>
+			<div class="section-cont">
+				<p>&copy; Blokk UI Kit. At half-past eight the door opened, the policeman appeared, and, requesting them.</p>
+			</div>
+		</section>
+	</footer>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>
