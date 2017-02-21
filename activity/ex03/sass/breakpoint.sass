@@ -1,0 +1,73 @@
+// * media query
+  break-point : 768px, 992px
+  column
+    mobile : 4
+    tablet : 8
+    desktop : 12
+
+
+   */
+
+
+
+*
+  box-sizing: border-box
+
+.container
+  margin: 0 auto
+
+.row::after
+  content: ''
+  display: block
+  clear: both
+
+[class|=col-]
+  float: left
+  padding:
+    left: 10px
+    right: 10px
+  border: 1px solid red
+
+.row [class|=col-]:nth-child(2n)
+  background: #eee
+.row [class|=col-]:nth-child(2n+1)
+  background: #999
+
+
+@media screen and (max-width: 767px)
+  .container
+    width: 100%
+
+  .col-xs-1
+    width: 25%
+  .col-xs-2
+    width: 50%
+  .col-xs-3
+    width: 75%
+  .col-xs-4
+    width: 100%
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  .container
+    width: 80%
+
+  .col-sm-1
+    width: 12.5%
+  .col-sm-2
+    width: 25%
+  .col-sm-3
+    width: 37.5%
+  .col-sm-4
+    width: 50%
+  .col-sm-5
+    width: 62.5%
+  .col-sm-6
+    width: 75%
+  .col-sm-7
+    width: 87.5%
+  .col-sm-8
+    width: 100%
+
+@media screen and (min-width: 992px)
+  .container
+    width: 960px

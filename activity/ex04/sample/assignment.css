@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Spoqa Han Sans', sans-serif;
+  font-size: 15px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 500px;
+}
+
+.title {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 200;
+}
+
+
+
+/* hover item settings */
+.rollover-item {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.rollover-item-wrapper {
+  width: 100%;
+  height: 600px;
+  transform: translateY(0);
+  transition: all 2s ease-in-out;
+}
+
+/* rollover-img*/
+.rollover-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+.rollover-item:nth-child(2) .rollover-img { background-image: url(ta.jpg);}
+.rollover-item:nth-child(3) .rollover-img { background-image: url(student.png);}
+.rollover-item:nth-child(4) .rollover-img { background-image: url(manager.png);}
+
+.rollover-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: all 2s ease-in-out;
+}
+
+/* rollover-content */
+.rollover-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 300px;
+  padding-bottom: 100%;
+  padding: 20px;
+  color: #fff;
+  background-color: black;
+}
+
+.rollover-title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.33rem;
+}
+.rollover-title::after {
+  content: '';
+  display: block;
+  margin-top: 20px;
+  width: 20px;
+  height: 3px;
+  background-color: white;
+}
+
+
+/* hover change */
+.rollover-item:hover .rollover-item-wrapper {
+  transform: translateY(-50%);
+}
+.rollover-item:hover .rollover-img::after {
+  background-color: black;
+}

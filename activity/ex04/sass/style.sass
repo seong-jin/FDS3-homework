@@ -1,0 +1,63 @@
+
+$list-h: 300px
+$list-w: 33.33333%
+$item-padding: 20px
+$transition-time: 0.5s
+$transition-time2: 1s
+
+.wrapper, .wrapper *
+	box-sizing: border-box
+
+.wrapper
+	height: 100vh
+	width: 80%
+	display: flex
+	flex-flow: column
+	justify-content: center
+	margin: 
+		left: auto
+		right: auto
+	box-sizing: border-box
+
+h1
+	text-align: center
+.box
+	ul
+		display: flex
+		justify-content: center
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			overflow: hidden
+			width: $list-w
+			height: $list-h
+			outline: 1px solid #000
+			background: #000 url('../images/img01.jpg') 50% 0 no-repeat
+			background-size: cover
+			transition: background $transition-time ease-in-out
+			&:nth-child(1)
+				background-image: url('../images/img01.jpg')
+			&:nth-child(2)
+				background-image: url('../images/img02.jpg')
+			&:nth-child(3)
+				background-image: url('../images/img03.jpg')
+		li:hover, li:focus
+			$bg-pos-y: $list-h * -1
+			background-position: 50% $bg-pos-y
+		li:hover .item, li:focus .item
+			padding-top: $item-padding
+			opacity: 1.0
+
+.item
+	box-sizing: content-box
+	height: $list-h - $item-padding * 2
+	padding: $item-padding
+	padding-top: $list-h + $item-padding
+	display: flex
+	flex-flow: column
+	justify-content: flex-end
+	color: #fff
+	background: #000
+	opacity: 0
+	transition: padding-top $transition-time ease-in-out, opacity $transition-time2
