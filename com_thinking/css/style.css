@@ -36,6 +36,7 @@ button {padding:0; border:0; background:none;}
 a {display:inline-block;}
 a:hover, a:focus {text-decoration:underline;}
 label, button, input[type='button'] {cursor:pointer;}
+abbr[title] {cursor:help; text-decoration:none; border-bottom:1px dotted #333;}
 
 /* skip navigation */
 #skip-navigation {margin:0;}
@@ -43,16 +44,21 @@ label, button, input[type='button'] {cursor:pointer;}
 #skip-navigation dd a {position:absolute; left:-9999em; width:100%; height:40px; line-height:40px; font-size:1.6rem; color:#fff; text-align:center; background:#03427e; z-index:9999;}
 #skip-navigation dd a:focus {left:0;}
 
-
 html,body {margin:0;}
 .wrapper {padding: 1em 1em 5em;}
-
 header {}
+
+strong,
+.section-title,
+.answer-area .tit,
+.answer-area dt {font-family:'shs-b', 'Malgun Gothic', helvetica, 'Apple Gothic', Tahoma, sans-serif;}
+
 section {padding:0 1em; margin-top:3em; border:2px solid #ccc;}
 section:first-child {margin-top:0;}
 .section-title {}
 section .section-title::before {content:'[ ';}
 section .section-title::after {content:' ]';}
+
 .question-area {padding:0.5em; margin:2em 0 1em; color:#fff; background:#333;}
 .section-title + .question-area {margin-top:0;}
 .question-area * {font-size:2.2rem; padding:0.2em; margin:0;}
@@ -65,8 +71,3 @@ section .section-title::after {content:' ]';}
 .answer-area dl dt:first-child {margin-top:0;}
 .answer-area dd {position:relative; padding-left:1.5em; margin:0.5em 0;}
 .answer-area dd::before {content:'- '; position:absolute; top:0; left:0.7em; font-weight:bold;}
-abbr {cursor:help; border-bottom:1px dotted #333;}
-strong,
-.section-title,
-.answer-area .tit,
-.answer-area dt {font-family:'shs-b', 'Malgun Gothic', helvetica, 'Apple Gothic', Tahoma, sans-serif;}
