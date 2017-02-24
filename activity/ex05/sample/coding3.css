@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: 'Spoqa Han Sans', sans-serif;
+  color: #0066ff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 200;
+}
+
+button {
+  border: none;
+  margin: 2rem;
+  background: transparent;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fill-btn, .line-btn, .split-line-btn {
+  position: relative;
+  padding: 1em 1.2em;
+  transition: all 1s ease-in-out;
+}
+
+.fill-btn::after, .line-btn::after, .split-line-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 1s ease-in-out;
+}
+
+.fill-btn {
+  border: 3px solid #0066ff;
+}
+
+.fill-btn::after {
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 100%;
+  background-color: #0066ff;
+}
+
+.fill-btn:hover {
+  color: #fff;
+}
+
+.fill-btn:hover::after {
+  left: 0;
+}
+
+.line-btn::after, .split-line-btn::after {
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  background-color: #0066ff;
+}
+
+.line-btn:hover::after {
+  right: 0;
+}
+
+.split-line-btn::after {
+  left: 50%;
+  right: 50%;
+}
+
+.split-line-btn:hover::after {
+  left: 0;
+  right: 0;
+}

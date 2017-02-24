@@ -1,0 +1,89 @@
+$base-color: #00468c
+$base-color-invert: #fff
+$border-width: 5px
+$transition-time: 0.2s
+
+.wrapper, .wrapper *
+	box-sizing: border-box
+
+.wrapper
+	height: 100vh
+	width: 80%
+	display: flex
+	flex-flow: column
+	justify-content: center
+	margin:
+		left: auto
+		right: auto
+	box-sizing: border-box
+
+h1
+	text-align: center
+.box
+	margin-top: 30px
+	ul
+		display: flex
+		justify-content: center
+		align-items: center
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			width: 33.333%
+			padding: 10px
+
+button
+	position: relative
+	display: inline-flex
+	align-items: center
+	box-sizing: content-box
+	padding: 1em 2em
+	font:
+		size: 1em
+		weight: bold
+	color: $base-color
+	background: none
+	border: none
+	cursor: pointer
+	transition: all $transition-time
+
+button::before
+	content: ''
+	box-sizing: content-box
+	position: absolute
+	transition: all $transition-time ease-in-out
+	z-index: -1
+
+.fill-btn
+	border: $border-width solid $base-color
+	&:hover, &:focus
+		color: $base-color-invert
+
+	&::before
+		top: 0
+		bottom: 0
+		left: 0
+		right: 100%
+		background: $base-color
+
+	&:hover::before, &:focus::before
+		right: 0
+
+.line-btn::before, .split-line-btn::before
+	bottom: $border-width *(-1)
+	left: 0
+	right: 100%
+	height: $border-width
+	background: $base-color
+
+.line-btn:hover::before, .line-btn:focus::before
+	right: 0
+
+.split-line-btn::before
+	left: 50%
+	right: 50%
+
+.split-line-btn:hover::before, .split-line-btn:focus::before
+	left: 0
+	right: 0
+
