@@ -53,6 +53,10 @@ strong,
 .answer-area .tit,
 .answer-area dt {font-family:'shs-b', 'Malgun Gothic', helvetica, 'Apple Gothic', Tahoma, sans-serif;}
 
+header h1,
+.section-title,
+.answer-area .tit {text-shadow:0 0 1px #000;}
+
 section {padding:0 1em; margin-top:3em; border:2px solid #ccc;}
 section:first-child {margin-top:0;}
 .section-title {}
