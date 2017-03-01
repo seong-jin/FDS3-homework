@@ -170,7 +170,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="tit" rowspan="3">RWD에서 이미지 가로 · 세로 비율 유지</td>
+							<td class="tit" rowspan="4">RWD에서 이미지 가로 · 세로 비율 유지</td>
 							<td rowspan="2">선행 학습</td>
 							<td>유연한 이미지(Fluid Image)</td>
 							<td></td>
@@ -193,17 +193,16 @@
 							<td class="file"><a href="#">ex06/crop_image</a></td>
 							<td class="stat">●</td>
 							<td class="date">2017-02-28</td>
-							<td class="note"> </td>
 						</tr>
 						<tr>
-							<td>1. Contents Image / <br>2. Background Image</td>
+							<td>1. Contents Image</td>
 							<td></td>
 							<td></td>
 							<td class="path"></td>
 							<td class="file"><a href="#">ex06/index</a></td>
 							<td class="stat">●</td>
 							<td class="date">2017-03-01</td>
-							<td class="note">
+							<td class="note" rowspan="2">
 								<dl>
 									<dt>Breakpoint</dt>
 									<dd>768px, 960px</dd>
@@ -212,6 +211,11 @@
 									<dd>img 에 대체텍스트를 입력하여 스크린 리더기에서 읽어줄 수 있도록 한다.</dd>
 									<dd>a 요소에 <code>data-text</code> 라는 속성을 만들고 img의 대체텍스트와 동일한 값 입력</dd>
 									<dd>a의 가상요소에 <code>content: attr(data-text)</code> 속성을 주어 텍스트를 표시</dd>
+
+									<dt><em>이미지 목록을 반응형으로 제작 시 체크 사항</em></dt>
+									<dd>퍼센트값으로 넓이를 지정하다 보니 값이 정수로 떨어지지 않는 경우가 발생한다.</dd>
+									<dd>이 때 img 요소를 사용하여 이미지 목록을 만들 경우 1px 정도의 <em>세로라인 공백이 간헐적으로 발생</em>하여 <em>디자인 이슈가 우려</em> 된다.</dd>
+									<dd><strong>배경 이미지로 처리할 경우엔 가로폭 변동에 자연스럽게 반응</strong>하여 공백이 발생하지 않는다.</dd>
 
 									<dt><em>이슈사항</em></dt>
 									<dd>translateX(-50%) 를 사용하여 텍스트를 가운데 정렬시켰을 때, <em>텍스트가 좌우로 흔들리는 것이 확인</em>됨</dd>
@@ -228,6 +232,15 @@
 										[수정] <code>left: 0; <em>width: 100%; text-align: center;</em></code></dd>
 								</dl>
 							</td>
+						</tr>
+						<tr>
+							<td>2. Background Image</td>
+							<td></td>
+							<td></td>
+							<td class="path"></td>
+							<td class="file"><a href="#">ex06/index2</a></td>
+							<td class="stat">●</td>
+							<td class="date">2017-03-01</td>
 						</tr>
 					</tbody>
 				</table>
