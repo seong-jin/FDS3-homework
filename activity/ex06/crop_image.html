@@ -1,0 +1,57 @@
+	<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>재단 이미지(Crop Image)</title>
+<meta name="viewport" content="width=device-width, initial-crop=1.0">
+<link rel="stylesheet" href="../css/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="image-wrap">
+	<h1>재단 이미지(Crop Image)</h1>
+	<p>재단 이미지(Crop Image)는 이미지를 포함하는 컨테이너 요소의 폭에 맞춰 크기가 동적으로 잘려지는 이미지를 말한다.</p>
+
+	<h2>1. Background Image</h2>
+	<ul>
+		<li>고정된 높이값을 준다.</li>
+		<li>배경이미지의 높이를 <strong>컨텐츠의 높이와 동일</strong>하게 주고 넓이는 auto를 준다.<br>
+			ex) height: 200px; background-size: auto 200px;</li>
+		<li>background-position 값을 지정하여 배경이미지의 중심점 지정(이미지 위치 지정)</li>
+	</ul>
+	<div class="crop-image-zone type1">
+		<ul>
+			<li><div class="responsive-crop-bg"></div></li>
+			<li><div class="responsive-crop-bg"></div></li>
+			<li><div class="responsive-crop-bg"></div></li>
+			<li><div class="responsive-crop-bg"></div></li>
+			<li><div class="responsive-crop-bg"></div></li>
+			<li><div class="responsive-crop-bg"></div></li>
+		</ul>
+	</div>
+
+	<h2>2. Contents Image</h2>
+	<ul>
+		<li>이미지의 부모요소에 position: relative와 고정 높이값을 준다.</li>
+		<li>부모요소에 overflow: hidden을 주어 이미지가 넘치는 것을 막는다.</li>
+		<li>이미지에 position: absolute를 주고 가운데 정렬한다.</li>
+		<li>이미지와 부모요소의 높이를 동일하게 하기 위해 이미지에 height: 100% 를 준다.</li>
+		<li>부모요소의 가로폭이 커서 좌우로 빈 공간이 생긴다면,
+			<ul>
+				<li>폭이 더 넓은 이미지로 교체한다.</li>
+				<li>이미지의 height 값을 100%보다 크게 설정하고 top 값을 조정한다.</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="crop-image-zone type2">
+		<div class="responsive-crop-container">
+			<img src="../images/img-wide02.jpg" alt="">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

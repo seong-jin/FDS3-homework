@@ -49,13 +49,13 @@
 		<section>
 			<h1 class="section-title">아침 엑티비티 실습</h1>
 			<div class="content">
-				<div class="section-comment">
-					<p><em>정리 중</em></p>
-					<!-- <dl>
+				<!--<div class="section-comment">
+					<p></p>
+					 <dl>
 						<dt></dt>
 						<dd></dd>
-					</dl> -->
-				</div>
+					</dl>
+				</div>-->
 
 				<table>
 					<caption>아침 엑티비티 실습 상세 내역</caption>
@@ -77,9 +77,7 @@
 							<td class="tit">접근성 테이블</td>
 							<td></td>
 							<td></td>
-							<td>
-
-							</td>
+							<td></td>
 							<td class="path">activity</td>
 							<td class="file"><a href="#">ex01/index</a></td>
 							<td class="stat">●</td>
@@ -100,12 +98,16 @@
 							<td></td>
 							<td class="path"></td>
 							<td class="file"><a href="#">ex02/index</a></td>
-							<td class="stat">△</td>
-							<td class="date"></td>
+							<td class="stat">●</td>
+							<td class="date">2017-03-02</td>
 							<td class="note">
 								<dl>
-									<dt></dt>
-									<dd></dd>
+									<dt>핵심내용</dt>
+									<dd>Breakpoint : 480px</dd>
+									<dd><code>data-*</code>와 <code>content: attr(data-*)</code> 이용</dd>
+									<dd>Breakpoint에서 <code>display: table-cell</code> 을 <code>display: block</code> 으로 변경</dd>
+									<dt>sample</dt>
+									<dd><a target="_blank" title="새 창" href="https://codepen.io/geoffyuen/pen/FCBEg">https://codepen.io/geoffyuen/pen/FCBEg</a></dd>
 								</dl>
 							</td>
 						</tr>
@@ -136,19 +138,17 @@
 							<td class="date">2017-02-21</td>
 							<td class="note">
 								<dl>
-									<dt>Event 발생</dt>
-									<dd><em>li</em> 에 마우스 오버 또는 포커스 시</dd>
-									<dt>Event 내용 1</dt>
-									<dd>이미지 변경(위로 이동, 검은색 커버 생성)</dd>
-									<dt>Event 내용 2</dt>
-									<dd>텍스트 영역(위로 이동하면서 보임)</dd>
+									<dt>Event</dt>
+									<dd><code>li:hover, li:focus</code></dd>
+									<dd>Event 1 : 이미지 변경(위로 이동, 검은색 커버 생성)</dd>
+									<dd>Event 2 : 텍스트 영역(위로 이동하면서 보임)</dd>
 									<dt>sample</dt>
 									<dd><a target="_blank" title="새 창" href="./activity/ex04/sample/sample.html">sample</a></dd>
 								</dl>
 							</td>
 						</tr>
 						<tr>
-							<td class="tit">Animation Effect Botton</td>
+							<td class="tit">Animation Effect Button</td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -159,13 +159,73 @@
 							<td class="note">
 								<dl>
 									<dt>핵심내용</dt>
-									<dd>가상요소(:before, :after)와 transition을 활용한 Animation 효과</dd>
+									<dd>가상요소(<code>::before, ::after</code>)와 transition을 활용한 Animation 효과</dd>
 									<dt>이벤트 내용</dt>
 									<dd>배경이 왼쪽에서 오른쪽으로 채워지는 애니메이션</dd>
 									<dd>밑줄이 왼쪽에서 오른쪽으로 늘어나는 애니메이션</dd>
 									<dd>밑줄이 가운데에서 좌우로 늘어나는 애니메이션</dd>
 									<dt>sample</dt>
 									<dd><a target="_blank" title="새 창" href="./activity/ex05/sample/sample.html">sample</a></dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td class="tit" rowspan="3">RWD에서 이미지 가로 · 세로 비율 유지</td>
+							<td rowspan="2">선행 학습</td>
+							<td>유연한 이미지(Fluid Image)</td>
+							<td></td>
+							<td class="path"></td>
+							<td class="file"><a href="#">ex06/fluid_image</a></td>
+							<td class="stat">●</td>
+							<td class="date">2017-02-28</td>
+							<td class="note" rowspan="2">
+								<dl>
+									<dt>참고 자료</dt>
+									<dd>야무선생님 RWD.pdf</dd>
+									<dd><a href="https://hyeonseok.com/soojung/css/2012/07/24/709.html" title="새 창" target="_blank">마진과 패딩에 퍼센트 값 적용</a></dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td>재단 이미지(Crop Image)</td>
+							<td></td>
+							<td class="path"></td>
+							<td class="file"><a href="#">ex06/crop_image</a></td>
+							<td class="stat">●</td>
+							<td class="date">2017-02-28</td>
+							<td class="note"> </td>
+						</tr>
+						<tr>
+							<td>1. Contents Image / <br>2. Background Image</td>
+							<td></td>
+							<td></td>
+							<td class="path"></td>
+							<td class="file"><a href="#">ex06/index</a></td>
+							<td class="stat">●</td>
+							<td class="date">2017-03-01</td>
+							<td class="note">
+								<dl>
+									<dt>Breakpoint</dt>
+									<dd>768px, 960px</dd>
+
+									<dt>이미지 위에 텍스트 표시 방법</dt>
+									<dd>img 에 대체텍스트를 입력하여 스크린 리더기에서 읽어줄 수 있도록 한다.</dd>
+									<dd>a 요소에 <code>data-alt</code> 라는 속성을 만들고 img의 대체텍스트와 동일한 값 입력</dd>
+									<dd>a의 가상요소에 <code>content: attr(data-text)</code> 속성을 주어 텍스트를 표시</dd>
+
+									<dt><em>이슈사항</em></dt>
+									<dd>translateX(-50%) 를 사용하여 텍스트를 가운데 정렬시켰을 때, <em>텍스트가 좌우로 흔들리는 것이 확인</em>됨</dd>
+
+									<dt><em>상세내용</em></dt>
+									<dd><code>a &gt; img</code> 에서 <code>hover, focus</code> 시 <code>a::before, a::after</code>에 transition 효과 적용</dd>
+									<dd>opacity: 0 &rarr; 1 의 transition 효과 적용</dd>
+									<dd>가로폭이 변하지 않는 상태에서도 transition 효과가 끝날 때까지 좌우로 1~2px 씩 흔들림</dd>
+									<dd>세로 가운데 정렬은 <code>translateY(-50%)</code>를 사용해도 이상 없음</dd>
+
+									<dt><em>해결책</em></dt>
+									<dd>동일한 문제 발생시 아래와 같이 코드를 수정한다.</dd>
+									<dd>[이슈] <code>left: 50%; transform: translateX(-50%);</code><br>
+										[수정] <code>left: 0; <em>width: 100%; text-align: center;</em></code></dd>
 								</dl>
 							</td>
 						</tr>
@@ -230,6 +290,24 @@
 								<dl>
 									<dt></dt>
 									<dd></dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td class="tit">UI Spinner Button</td>
+							<td></td>
+							<td></td>
+							<td>psd 없음</td>
+							<td class="path"></td>
+							<td class="file"><a href="#">ex03/index</a></td>
+							<td class="stat">△</td>
+							<td class="date"></td>
+							<td class="note">
+								<dl>
+									<dt>이벤트</dt>
+									<dd>감소/증가 버튼 클릭시 : 카운터 변경</dd>
+									<dd>기준 Max/min number 에 달하면 카운트 중지</dd>
+									<dd>코드를 줄이기 위한 함수 적용</dd>
 								</dl>
 							</td>
 						</tr>

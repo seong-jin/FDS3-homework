@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>유연한 이미지(Fluid Image)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+
+<div class="image-wrap">
+	<h1>유연한 이미지(Fluid Image)</h1>
+	<p>유연한 이미지(Fluid Image)는 이미지를 포함하는 컨테이너 요소의 폭에 맞춰 크기가
+	변경되는 이미지를 말한다.</p>
+
+	<h2>1. Contents Image</h2>
+	<ul>
+		<li>img에 width: 100%; height: auto; 적용</li>
+	</ul>
+	<div class="rwd-image-zone type1">
+		<ul>
+			<li><img src="../images/img01.jpg" alt=""></li>
+			<li><img src="../images/img04.jpg" alt=""></li>
+		</ul>
+	</div>
+
+	<h2>2. Background Image</h2>
+	<p>padding 과 margin을 퍼센트 값으로 지정할 경우 상위 요소를 기준으로 적용이 되며, 상하 마진/패딩이 퍼센트 값으로 지정될 경우 <strong>상위 요소의 너비(width)를 기준</strong>으로 적용된다.</p>
+	<ul>
+		<li>padding-bottom: <strong>(가로 / 세로 * 100)</strong></li>
+		<li>ex) padding-bottom: 100% (가로 : 세로 = 1 : 1)</li>
+		<li>참고: <a href="https://hyeonseok.com/soojung/css/2012/07/24/709.html" target="_blank" title="새 창 열림">마진과 패딩에 퍼센트 값 적용</a></li>
+	</ul>
+	<div class="rwd-image-zone type2">
+		<ul>
+			<li><div class="responsive-scale-bg"></div></li>
+			<li><div class="responsive-scale-bg"></div></li>
+			<li><div class="responsive-scale-bg"></div></li>
+			<li><div class="responsive-scale-bg"></div></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

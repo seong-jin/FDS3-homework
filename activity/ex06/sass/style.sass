@@ -1,0 +1,253 @@
+
+/* base style */
+body *
+	box-sizing: border-box
+	line-height: 1.5
+h1
+	text-align: center
+h1, h2, strong
+	text-shadow: 0 0 1px #222
+
+
+/* RWD에서 가로 · 세로 비율 유지 */
+.wrapper
+	width: 100%
+	min-width: 320px
+	margin:
+		left: auto
+		right: auto
+	h1, h2
+		padding: 0 20px
+.fixed-rate-image-wrap + h2
+	margin-top: 100px
+
+.fixed-rate-image-wrap
+	border: 5px solid #333
+	ul
+		display: flex
+		flex-flow: wrap
+		justify-content: flex-start
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			overflow: hidden
+	a
+		position: relative
+		display: block
+		width: 100%
+		padding-top: 100%
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba(0, 0, 0, 0.75)
+			z-index: 1
+
+// Contents Image
+.contents-image-type
+	a::after
+		content: attr(data-text)
+		position: absolute
+		top: 50%
+		left: 0
+		width: 100%
+		font-size: 2em
+		font-weight: bold
+		text-align: center
+		white-space: nowrap
+		color: #fff
+		transform: translateY(-50%)
+		z-index: 2
+	a::before,
+	a::after
+		opacity: 0
+		transition: all 1s
+	a:hover::before,
+	a:hover::after,
+	a:focus::before,
+	a:focus::after
+		opacity: 1
+	a img
+		position: absolute
+		top: 0
+		left: 50%
+		display: block
+		min-width: 100%
+		height: 100%
+		transform: translateX(-50%)
+
+// Background image
+.background-image-type
+	li a
+		background: url(../images/image-1.png) 50% 0
+		background-size: cover
+		span
+			position: absolute
+			top: 50%
+			left: 0
+			display: block
+			width: 100%
+			font-size: 2em
+			font-weight: bold
+			text-align: center
+			white-space: nowrap
+			color: #fff
+			text-align: center
+			transform: translateY(-50%)
+			z-index: 2
+		&::before,
+		& span
+			opacity: 0
+			transition: all 1s
+		&:hover::before,
+		&:focus::before,
+		&:hover span,
+		&:focus span
+			opacity: 1
+
+$total: 12
+@for $i from 1 through $total
+	.background-image-type li:nth-child(#{$total}n + #{$i}) a
+		background-image: url(../images/image-#{$i}.png)
+
+/* breakpoint : 768px, 960px */
+@media screen and (max-width: 767px)
+	.wrapper
+		margin-bottom: 0
+	.fixed-rate-image-wrap ul li
+		width: 50%
+
+@media screen and (min-width: 768px) and (max-width: 959px)
+	.wrapper
+		padding:
+			left: 30px
+			right: 30px
+		margin:
+			top: 30px
+			bottom: 30px
+	.fixed-rate-image-wrap ul li
+		width: 33.3333%
+
+@media screen and (min-width: 960px)
+	.wrapper
+		width: 85%
+		margin:
+			top: 50px
+			bottom: 50px
+	.fixed-rate-image-wrap ul li
+		width: 25%
+
+
+/* 유연한 이미지, 재단 이미지 */
+.image-wrap
+	width: 80%
+	margin:
+		left: auto
+		right: auto
+
+// 유연한 이미지
+.rwd-image-zone
+	margin:
+		top: 20px
+		bottom: 100px
+	border: 5px solid #333
+	ul
+		display: flex
+		justify-content: flex-start
+		flex-flow: wrap
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			width: 50%
+			border: 2px solid #fff
+			img
+				display: block
+// 유연한 이미지 - 컨텐츠
+.rwd-image-zone.type1
+	img
+		width: 100%
+		height: auto
+
+// 유연한 이미지 - 배경
+.rwd-image-zone.type2
+	li
+		width: 50%
+		.responsive-scale-bg
+			padding-bottom: 100%
+			background: url('../../images/img01.jpg') 50%
+			background-size: cover
+	li:nth-child(2n+1) .responsive-scale-bg
+		background-image: url('../../images/img04.jpg')
+	li:nth-child(1) .responsive-scale-bg,
+	li:nth-child(2) .responsive-scale-bg
+		padding-bottom: 66.66667%
+
+	// 부가 설명 부분
+	li .responsive-scale-bg
+		position: relative
+		&::before
+			content: '가로 : 세로 = 1 : 1'
+			position: absolute
+			top: 50%
+			left: 50%
+			display: block
+			width: 50%
+			text-align: center
+			padding: 0.4em
+			border-radius: 2px
+			font-size: 1.5em
+			@media screen and (max-width: 1020px)
+				font-size: 16px
+			font-weight: bold
+			color: #fff
+			background: rgba(0,0,0,0.6)
+			transform: translate(-50%, -50%)
+	li:nth-child(1) .responsive-scale-bg::before,
+	li:nth-child(2) .responsive-scale-bg::before
+		content: '가로 : 세로 = 3 : 2'
+
+
+// 재단 이미지
+.crop-image-zone
+	margin:
+		top: 20px
+		bottom: 100px
+	border: 5px solid #333
+	ul
+		display: flex
+		justify-content: flex-start
+		flex-flow: wrap
+		list-style: none
+		margin: 0
+		padding: 0
+	li
+		width: 100%
+		outline: 2px solid #fff
+	li:nth-child(2), li:nth-child(3)
+		width: 50%
+	li:nth-child(4), li:nth-child(5), li:nth-child(6)
+		width: 33.33333%
+
+// 재단 이미지 - 배경
+.crop-image-zone.type1
+	li .responsive-crop-bg
+		height: 200px
+		background: url(../../images/img-wide01.jpg) 50% 0
+		background-size: auto 200px
+
+// 재단 이미지 - 컨텐츠
+.responsive-crop-container
+	position: relative
+	height: 200px
+	overflow: hidden
+	img
+		position: absolute
+		top: 0
+		left: 50%
+		height: 100%
+		transform: translateX(-50%)
