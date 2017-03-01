@@ -207,12 +207,12 @@
 									<dt>Breakpoint</dt>
 									<dd>768px, 960px</dd>
 
-									<dt>이미지 위에 텍스트 표시 방법</dt>
+									<dt>Contents Image 위에 텍스트를 표시하는 방법</dt>
 									<dd>img 에 대체텍스트를 입력하여 스크린 리더기에서 읽어줄 수 있도록 한다.</dd>
 									<dd>a 요소에 <code>data-text</code> 라는 속성을 만들고 img의 대체텍스트와 동일한 값 입력</dd>
 									<dd>a의 가상요소에 <code>content: attr(data-text)</code> 속성을 주어 텍스트를 표시</dd>
 
-									<dt><em>이미지 목록을 반응형으로 제작 시 체크 사항</em></dt>
+									<dt><em>이미지 목록을 반응형으로 제작 시 체크사항</em></dt>
 									<dd>퍼센트값으로 넓이를 지정하다 보니 값이 정수로 떨어지지 않는 경우가 발생한다.</dd>
 									<dd>이 때 img 요소를 사용하여 이미지 목록을 만들 경우 1px 정도의 <em>세로라인 공백이 간헐적으로 발생</em>하여 <em>디자인 이슈가 우려</em> 된다.</dd>
 									<dd><strong>배경 이미지로 처리할 경우엔 가로폭 변동에 자연스럽게 반응</strong>하여 공백이 발생하지 않는다.</dd>
@@ -228,8 +228,8 @@
 
 									<dt><em>해결책</em></dt>
 									<dd>동일한 문제 발생시 아래와 같이 코드를 수정한다.</dd>
-									<dd>[이슈] <code>left: 50%; transform: translateX(-50%);</code><br>
-										[수정] <code>left: 0; <em>width: 100%; text-align: center;</em></code></dd>
+									<dd>[이슈 CODE] <code>left: 50%; transform: translateX(-50%);</code><br>
+										[수정 CODE] <code>left: 0; <em>width: 100%; text-align: center;</em></code></dd>
 								</dl>
 							</td>
 						</tr>

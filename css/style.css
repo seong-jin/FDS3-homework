@@ -24,10 +24,10 @@ header .nav li.on::before {content:'→'; display:inline-block; padding-right:.4
 .publishing-rule dd li {margin-top:.2em;}
 .publishing-rule dd li:first-child {margin-top:0;}
 #container{padding-bottom:5em;}
-.total{font-weight:bold; font-style:italic;}
+.total{margin-left:0.3em; font-weight:bold; font-size:1.1em; font-style:italic;}
 .total+section{margin-top:1em;}
 section{margin-top:3em;}
-.section-title{padding:0.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
+.section-title{padding:0.5em 1em; color:#fff; background:#03427e; cursor:pointer;}
 .section-comment{padding:0.3em; margin:0; border:1px solid #03427e;}
 .section-comment div, .section-comment p {padding:1em .5em;}
 .section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
