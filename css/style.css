@@ -5,7 +5,8 @@ html {font:10px/1.5 'Noto Sans', 'Malgun Gothic', helvetica, 'Apple Gothic', Tah
 body {min-width:960px;background:#fff; color:#666;}
 a {color:#0075e5; text-decoration:none;}
 a:focus, a:hover, a:active {text-decoration:underline;}
-em {color:#c82026; margin:0 2px;}
+em {font-style: normal; color:#c82026;}
+code {font-family: Consolas, 'Noto Sans', Tahoma, sans-serif;}
 
 header, #container {padding:10px; font-size:1.4rem;}
 header{margin-bottom:1.5em;}
@@ -55,7 +56,7 @@ table .note dl {font-style:normal; box-sizing:border-box; padding:1em; backgroun
 table .overcoloring .note dl {background-color:#fff;}
 table .note dt {margin-top:.8em; font-weight:bold;}
 table .note dt:first-child {margin-top:0;}
-table .note dd {padding-left:1.5em; text-indent:-0.9em; margin-top:.5em;}
+table .note dd {padding-left:1.5em; text-indent:-0.6em; margin-top:.5em;}
 table .note dd::before {content:'- '; opacity:0.7;}
 table ul {list-style:none; margin:0; padding:0 20px; font-style:italic;}
 table tbody.remove td {background-color:#ccc;}
