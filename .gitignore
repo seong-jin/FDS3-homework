@@ -77,3 +77,5 @@ sftp-config.json
 .idea
 .vscode
 
+#node-sass
+package.json
