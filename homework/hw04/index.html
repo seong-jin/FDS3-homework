@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>RWD에서 가로 · 세로 비율 유지 - 1. Contents Image</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+	<h1>RWD에서 이미지 가로 · 세로 비율 유지</h1>
+	<ul>
+		<li>[이미지 비율]  가로 : 세로 = 1 : 1</li>
+		<li>Breakpoint: 768px, 960px
+			<ul>
+				<li>960px 이상 : 한 줄 당 이미지 4개</li>
+				<li>768px ~ 959px : 한 줄 당 이미지 3개</li>
+				<li>767px 이하 : 한 줄 당 이미지 2개</li>
+			</ul>
+		</li>
+	</ul>
+	<h2>1. Contents Image</h2>
+	<ul>
+		<li>img 에 대체텍스트 입력, a 요소에 data-text라는 속성을 만들고 대체텍스트와 동일한 값 입력</li>
+		<li>content: attr(data-text) 를 이용하여 텍스트 표시</li>
+	</ul>
+	<div class="fixed-rate-image-wrap contents-image-type">
+		<ul>
+			<li><a href="#" data-text="Tokyo"><img src="./images/image-1.png" alt="Tokyo"></a></li>
+			<li><a href="#" data-text="House"><img src="./images/image-2.png" alt="House"></a></li>
+			<li><a href="#" data-text="Iceland"><img src="./images/image-3.png" alt="Iceland"></a></li>
+			<li><a href="#" data-text="Meadow"><img src="./images/image-4.png" alt="Meadow"></a></li>
+			<li><a href="#" data-text="Desert 1"><img src="./images/image-5.png" alt="Desert 1"></a></li>
+			<li><a href="#" data-text="Watch"><img src="./images/image-6.png" alt="Watch"></a></li>
+			<li><a href="#" data-text="Buildings"><img src="./images/image-7.png" alt="Buildings"></a></li>
+			<li><a href="#" data-text="Desert 2"><img src="./images/image-8.png" alt="Desert 2"></a></li>
+			<li><a href="#" data-text="Woodland"><img src="./images/image-9.png" alt="Woodland"></a></li>
+			<li><a href="#" data-text="Airplane"><img src="./images/image-10.png" alt="Airplane"></a></li>
+			<li><a href="#" data-text="Colorado"><img src="./images/image-11.png" alt="Colorado"></a></li>
+			<li><a href="#" data-text="Winter"><img src="./images/image-12.png" alt="Winter"></a></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
