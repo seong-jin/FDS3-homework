@@ -14,7 +14,7 @@ header h1 {padding:0.15em 0.5em 0.5em; color:#333; font-size:3rem;}
 header .nav {display:inline-flex; justify-content:flex-end; box-sizing:border-box; width:100%; list-style:none; background:#969696; padding:0.5em 2em 0.4em; color:#f9f9f9; font-weight:bold; font-size:1.1em;}
 header .nav li {display:inline; margin-left:1em;}
 header .nav li a {color:#f9f9f9;}
-header .nav li.on a {color:#fff; border-bottom:2px solid #fff; text-shadow:#555 2px 1px 2px; text-decoration:none;}
+header .nav li.on a {color:#fff; border-bottom:2px solid #fff; text-shadow:#333 1px 1px 1px; text-decoration:none;}
 header .nav li.on::before {content:'→'; display:inline-block; padding-right:.4em;}
 .publishing-rule {font-size:1.2rem;}
 .publishing-rule dl{padding:0.5em 0.8em; margin-top:1em; background:#f7f7f7;}
@@ -27,8 +27,8 @@ header .nav li.on::before {content:'→'; display:inline-block; padding-right:.4
 .total{margin-left:0.3em; font-weight:bold; font-size:1.1em; font-style:italic;}
 .total+section{margin-top:1em;}
 section{margin-top:3em;}
-.section-title{padding:0.3em 1em; color:#fff; background:#03427e; cursor:pointer;}
-.section-comment{padding:0.3em; margin:0; border:1px solid #03427e;}
+.section-title{padding:0.8em 1em; font-size:1.24em; color:#fff; background:#0295C9; cursor:pointer;}
+.section-comment{padding:0.3em; margin:0; border:1px solid #0295C9;}
 .section-comment div, .section-comment p {padding:1em .5em;}
 .section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
 .section-comment dl + dl {margin-top:-1px;}
