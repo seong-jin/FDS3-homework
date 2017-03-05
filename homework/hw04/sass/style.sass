@@ -1,51 +1,209 @@
-@import "./lib/functions"
-@import "./lib/mixins"
-@import "./lib/common"
-@import "base-font"
-@import "base-setting"
-@import "layout"
+$border-color: #040402
+$skin-color: #feeaab
+$pink-color: #e87982
+$water-color: #aef5f7
+$hair-color: #333
 
+/* base style */
+.none
+	display: none
+body
+	min-height: 100vh
+	background: rgba(0, 128, 128, 0.5)
+body *
+	box-sizing: border-box
+	line-height: 1.5
+h1.page-title
+	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbb, 0 4px 0 #b5b5b5, 0 5px 0 #aaa, 0 6px 0 #a5a5a5, 0 7px 3px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.2), 0 10px 15px rgba(0,0,0,0.15), 0 15px 15px rgba(0,0,0,0.1)
+	text-align: center
+	color: #fff
+h2, strong
+	text-shadow: 0 0 1px #222
 .wrapper
-  position: relative
+	width: 800px
+	padding: 50px 0
+	margin:
+		left: auto
+		right: auto
 
-header
-  background: #4d4b4a
-  .header-cont
-    +mq($lg)
-      padding: 0 10px
+// yamaggo
+.yamaggo-zone
+	display: flex
+	height: 400px
+.before-image-zone, .drawing-zone
+	width: 50%
+	outline: 1px solid #333
+.before-image-zone
+	display: flex
+	justify-content: center
+	align-items: center
 
-.logo
-  +font-color(type1)
-  font-size: 3.6rem
-  span
-    margin-left: 0.2em
-    @extend %uppercase
-    font:
-      size: 2.4rem
-      weight: bold
-    +font-family(default)
-nav
-  @extend %set-nav
-  @extend %uppercase
-  +font-family(default)
-  +font-color(type2)
-  a
-    +mq($lg)
-      display: inline-block
-    &:hover, &:focus
-      font-weight: bold
-      +font-color(type1)
-      text-decoration: none
+.drawing-zone
+	position: relative
 
-#hamburger
-  @extend %reset-button
-  +flex-align(center)
-  +font-color(type1)
-  height: 44px
-  width: 49px
-  font-size: 3.6rem
-  border: 1px solid $color-type1
-  .burger-txt
-    @extend .hidden
-  +mq($lg)
-    display: none
+// start
+
+.box
+	position: absolute
+	top: 50%
+	left: 50%
+	height: 315px
+	width: 310px
+	transform: translateX(-50%) translateY(-50%)
+	img
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translateX(-50%) translateY(-50%)
+		z-index: -1
+.box div,
+.box div::before,
+.box div::after
+	position: absolute
+
+.face
+	top: 56px
+	left: 25px
+	height: 220px
+	width: 264px
+	border-radius: 50%
+	border: 5px solid $border-color
+	background: $skin-color
+	z-index: 0
+
+.eye
+	top: 96px
+	left: 51px
+	width: 60px
+	height: 58px
+	border: 5px solid $border-color
+	border-radius: 50%
+	background: #fff
+	&::before
+		content: ''
+		top: 50%
+		left: 50%
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		transform: translateY(-50%) translateX(-50%)
+		background: $border-color
+	&.two
+		left: 152px
+.eyebrow
+	top: -28px
+	left: 50%
+	height: 0
+	width: 0
+	box-sizing: content-box
+	border-radius: 80px 80px 0 0
+	border:
+		top: 40px solid $border-color
+		left: 30px solid transparent
+		right: 30px solid transparent
+	transform: translateX(-50%)
+	z-index: -2
+	&::before
+		content: ''
+		top: -33px
+		left: 50%
+		border-radius: 80px 80px 0 0
+		border: 30px solid $skin-color
+		transform: translateX(-50%)
+		z-index: -1
+.nose
+	top: 130px
+	left: 50%
+	box-sizing: content-box
+	height: 15px
+	width: 15px
+	border-radius: 100%
+	border: 5px solid
+	border-color: $border-color $border-color transparent transparent
+	transform: translateX(-50%) rotate(-45deg)
+.mouth
+	top: 157px
+	left: 50%
+	width: 46px
+	height: 32px
+	border-radius: 60%
+	border-top-left-radius: 30px
+	border-top-right-radius: 30px
+	border: 5px solid $border-color
+	background: $pink-color
+	transform: translateX(-50%)
+	&::before
+		content: ''
+		position: absolute
+		top: 100%
+		left: 50%
+		height: 22px
+		width: 12px
+		margin-left: -5px
+		margin-top: 5px
+		background: linear-gradient(to bottom, transparent 0, $water-color 5%, $water-color 95%, transparent 100%)
+		transform: translateX(-50%)
+.blush
+	top: 158px
+	left: 50%
+	width: 34px
+	height: 20px
+	margin-left: -67px
+	border-radius: 50%
+	background: $pink-color
+	transform: translateX(-50%) rotate(-10deg)
+.blush.two
+	margin-left: 50px
+	transform: rotate(0deg)
+.ear
+	top: 168px
+	left: 0
+	width: 120px
+	height: 53px
+	border: 5px solid $border-color
+	border-radius: 80%
+	border-bottom-right-radius: 50px
+	border-bottom-left-radius: 50px
+	background: $skin-color
+	transform: rotate(15deg)
+	z-index: -1
+	&::before
+		content: ''
+		position: absolute
+		top: 22px
+		left: 11px
+		width: 20px
+		height: 6px
+		border-radius: 4px
+		background: $border-color
+		transform: rotate(-24deg)
+.ear.two
+	left: auto
+	right: 0
+	transform: rotate(-15deg)
+	&::before
+		left: auto
+		right: 11px
+		transform: rotate(16deg)
+
+// hair
+.hair
+	top: 23px
+	left: 50%
+	width: 264px
+	height: 132px
+	border-radius: 264px 264px 0 0
+	background: linear-gradient(to bottom, $hair-color 75%, transparent 75%, transparent)
+	transform: translateX(-50%)
+
+
+
+
+.test
+	opacity: 0.7
+.back
+	z-index: -1
+
+
+
+
