@@ -13,6 +13,7 @@
 	<div class="wrapper">
 		<h1 class="page-title">CSS Drawing Image</h1>
 		<h2>Profile Photo - Yamaggo</h2>
+		<p>[임시] 우측 이미지를 클릭하면 사라짐(토글)</p>
 		<div class=" yamaggo-zone">
 			<div class="before-image-zone">
 				<img src="./images/yamaggo.jpg" alt="야마꼬 이미지">
@@ -20,7 +21,7 @@
 			<div class="drawing-zone">
 				<!-- box -->
 				<div class="box">
-					<img src="./images/yamaggo_edit.jpg" alt="" class="">
+					<img src="./images/yamaggo_edit.jpg" alt="" id="yamaggo">
 					<!-- head -->
 					<div class="head test">
 						<!-- face -->
@@ -56,5 +57,22 @@
 
 		<div class="dd"></div>
 	</div>
+
+
+<script>
+	var yamaggo, active, activeClass;
+	yamaggo = document.getElementById('yamaggo');
+	active = false;
+	activeClass = 'blind';
+	yamaggo.onclick = function(){
+		// console.log(yamaggo);
+		if (active) {
+			this.setAttribute('class', '');
+		} else {
+			this.setAttribute('class', activeClass);
+		}
+		active = !active;
+	};
+</script>
 </body>
 </html>

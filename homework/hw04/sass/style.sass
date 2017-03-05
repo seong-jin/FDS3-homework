@@ -5,8 +5,6 @@ $water-color: #aef5f7
 $hair-color: #333
 
 /* base style */
-.none
-	display: none
 body
 	min-height: 100vh
 	background: rgba(0, 128, 128, 0.5)
@@ -196,11 +194,12 @@ h2, strong
 	background: linear-gradient(to bottom, $hair-color 75%, transparent 75%, transparent)
 	transform: translateX(-50%)
 
-
-
+.blind
+  opacity: 0
 
 .test
 	opacity: 0.7
+
 .back
 	z-index: -1
 
