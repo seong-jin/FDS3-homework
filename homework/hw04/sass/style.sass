@@ -30,7 +30,7 @@ h2, strong
 	height: 400px
 .before-image-zone, .drawing-zone
 	width: 50%
-	outline: 1px solid #333
+	outline: 1px solid $hair-color
 .before-image-zone
 	display: flex
 	justify-content: center
@@ -42,6 +42,7 @@ h2, strong
 // start
 
 .box
+	overflow: hidden
 	position: absolute
 	top: 50%
 	left: 50%
@@ -81,13 +82,13 @@ h2, strong
 		content: ''
 		top: 50%
 		left: 50%
-		width: 30px
-		height: 30px
+		width: 36px
+		height: 36px
 		border-radius: 50%
 		transform: translateY(-50%) translateX(-50%)
 		background: $border-color
 	&.two
-		left: 152px
+		left: 147px
 .eyebrow
 	top: -28px
 	left: 50%
@@ -190,25 +191,36 @@ h2, strong
 	left: 50%
 	width: 264px
 	height: 132px
+	border-radius: 50%
 	border-radius: 264px 264px 0 0
 	background: linear-gradient(to bottom, $hair-color 75%, transparent 75%, transparent)
 	transform: translateX(-50%)
-.side-piece
-	top: 61px
-	left: -9px
-	height: 200px
-	width: 200px
-	border-radius: 50%
-	background-image: linear-gradient(to top,#333, #333 15%, transparent 15%, transparent)
-	border-bottom-right-radius: 239px
-	transform: rotate(104deg)
-.side-piece.two
-	top: 32px
-	left: auto
-	right: -1px
-	border-bottom-left-radius: 239px
-	transform: rotate(-104deg)
+	&::before
+		content: ''
+		position: absolute
+		top: 87px
+		left: 50%
+		height: 800px
+		width: 800px
+		border-radius: 50%
+		background: linear-gradient(to bottom, #feeaab, #feeaab 14px, transparent 14px, transparent)
+		transform: translateX(-50%)
 
+.side-piece
+	box-sizing: content-box
+	top: 26px
+	left: 0px
+	height: 180px
+	width: 130px
+	border-radius: 50%
+	box-shadow: inset 26px 28px 0 0 $hair-color
+	transform: rotate(14deg)
+.side-piece.two
+	top: 30px
+	left: auto
+	right: 1px
+	box-shadow: inset -26px 28px 0 0 $hair-color
+	transform: rotate(-17deg)
 .top-piece
 	box-sizing: content-box
 	left: 50%
@@ -217,13 +229,15 @@ h2, strong
 	width: 70px
 	margin-left: -28px
 	border-radius: 50%
-	box-shadow: inset -23px 0 0 0 #333
+	box-shadow: inset -23px 0 0 0 $hair-color
 	transform: translateX(-50%) rotate(-10deg)
 .top-piece.two
 	top: -22px
 	margin-left: 36px
-	box-shadow: inset 23px 0 0 0 #333
+	box-shadow: inset 23px 0 0 0 $hair-color
 	transform: translateX(-50%) rotate(-5deg)
+
+
 
 
 
