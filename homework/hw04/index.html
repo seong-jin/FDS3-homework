@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title></title>
+	<title>CSS Drawing Image</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/normalize.min.css">
 	<link rel="stylesheet" href="./css/style.css">
@@ -13,7 +12,6 @@
 	<div class="wrapper">
 		<h1 class="page-title">CSS Drawing Image</h1>
 		<h2>Profile Photo - Yamaggo</h2>
-		<p>[임시] 우측 이미지를 클릭하면 사라짐(토글)</p>
 		<div class=" yamaggo-zone">
 			<div class="before-image-zone">
 				<img src="./images/yamaggo.jpg" alt="야마꼬 이미지">
@@ -21,7 +19,10 @@
 			<div class="drawing-zone">
 				<!-- box -->
 				<div class="box">
-					<img src="./images/yamaggo_edit.jpg" alt="" id="yamaggo">
+					<!-- shadow -->
+					<div class="shadow"></div>
+					<!-- //shadow -->
+
 					<!-- head -->
 					<div class="head">
 						<!-- face -->
@@ -37,9 +38,9 @@
 							<div class="blush"></div>
 							<div class="blush two"></div>
 						</div>
-						<!-- // face -->
+						<!-- //face -->
 					</div>
-					<!-- // head -->
+					<!-- //head -->
 					<!-- hair -->
 					<div class="hair">
 						<div class="side-piece"></div>
@@ -47,32 +48,24 @@
 						<div class="top-piece"></div>
 						<div class="top-piece two"></div>
 					</div>
-					<!-- // hair -->
+					<!-- //hair -->
+
 					<div class="ear"></div>
 					<div class="ear two"></div>
+
+					<!-- body -->
+					<div class="body">
+						<div class="arm-shadow"></div>
+						<div class="arm"></div>
+
+						<div class="arm-shadow two"></div>
+						<div class="arm two"></div>
+					</div>
+					<!-- //body -->
 				</div>
 				<!-- // box -->
 			</div>
 		</div>
-
-		<div class="dd"></div>
 	</div>
-
-
-<script>
-	var yamaggo, active, activeClass;
-	yamaggo = document.getElementById('yamaggo');
-	active = false;
-	activeClass = 'blind';
-	yamaggo.onclick = function(){
-		// console.log(yamaggo);
-		if (active) {
-			this.setAttribute('class', '');
-		} else {
-			this.setAttribute('class', activeClass);
-		}
-		active = !active;
-	};
-</script>
 </body>
 </html>

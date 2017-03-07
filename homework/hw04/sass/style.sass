@@ -3,6 +3,8 @@ $skin-color: #feeaab
 $pink-color: #e87982
 $water-color: #aef5f7
 $hair-color: #333
+$cloth-color: #fff
+$shadow-color: #adadad
 
 /* base style */
 body
@@ -37,24 +39,18 @@ h2, strong
 	align-items: center
 
 .drawing-zone
-	position: relative
+  position: relative
 
 // start
-
 .box
-	overflow: hidden
-	position: absolute
-	top: 50%
-	left: 50%
-	height: 315px
-	width: 310px
-	transform: translateX(-50%) translateY(-50%)
-	img
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translateX(-50%) translateY(-50%)
-		z-index: -1
+  overflow: hidden
+  position: absolute
+  top: 50%
+  left: 50%
+  height: 315px
+  width: 310px
+  transform: translateX(-50%) translateY(-50%)
+  background: #fff
 .box div,
 .box div::before,
 .box div::after
@@ -237,19 +233,82 @@ h2, strong
 	box-shadow: inset 23px 0 0 0 $hair-color
 	transform: translateX(-50%) rotate(-5deg)
 
+// body
+.body
+	overflow: hidden
+	top: 245px
+	left: 50%
+	height: 260px
+	width: 180px
+	border-radius: 50%
+	border: 5px solid $border-color
+	background: $cloth-color
+	transform: translate(-50%)
+	z-index: -1
 
+.arm-shadow
+	box-sizing: content-box
+	top: -71px
+	left: 51px
+	height: 200px
+	width: 120px
+	border-radius: 50%
+	box-shadow: inset 36px -26px 0 0 $border-color
+	transform: rotate(-46deg)
+.arm
+	box-sizing: content-box
+	top: -66px
+	left: 72px
+	height: 200px
+	width: 120px
+	border-radius: 50%
+	box-shadow: inset 28px -4px 0 0 $cloth-color
+	transform: rotate(-65deg)
 
+.arm-shadow.two
+	top: -78px
+	left: -25px
+	height: 250px
+	width: 120px
+	box-shadow: inset -37px -37px 0 0 $border-color
+	transform: rotate(56deg)
+.arm.two
+	top: -84px
+	left: -25px
+	height: 250px
+	width: 120px
+	box-shadow: inset -27px -33px 0 0 $cloth-color
+	transform: rotate(55deg)
 
+// shadow
+.shadow
+	top: 90px
+	left: 50%
+	height: 220px
+	width: 220px
+	margin-left: -5px
+	border-radius: 50%
+	background: linear-gradient(to left, $shadow-color, $shadow-color 50%, transparent 50%, transparent)
+	transform: translateX(-50%)
+	z-index: -2
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		left: 50%
+		border-radius: 50%
+		background: $shadow-color
+		transform: translateX(-50%)
+	&::before
+		top: 95px
+		width: 55px
+		height: 55px
+		margin-left: 110px
+	&::after
+		top: 173px
+		width: 80px
+		height: 120px
+		margin-left: 56px
 
 .blind
   opacity: 0
-
-.test
-	opacity: 0.7
-
-.back
-	z-index: -1
-
-
-
-
