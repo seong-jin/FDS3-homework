@@ -1,0 +1,184 @@
+$gray-1: #606060
+$gray-2: #bbb
+$gray-3: #c2c2c2
+$gray-4: #d0d0d0
+$gray-5: #dbdbdb
+$gray-6: #efefef
+$gray-m1: #606060
+$gray-m2: #767676
+$gray-m3: #828282
+
+/* base style */
+body
+	min-height: 100vh
+	background: $gray-6
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+body *
+	box-sizing: border-box
+	line-height: 1.5
+h1
+	padding: 0 20px
+	text-align: center
+h1, h2
+	text-shadow: 0 0 1px #222
+strong
+	text-shadow: 0 0 1px #999
+.wrapper
+	width: 100%
+	min-width: 320px
+	padding: 50px 0
+	margin:
+		left: auto
+		right: auto
+	background: #fff
+.description
+	margin-bottom: 50px
+	padding: 20px
+	border-bottom: 1px dotted #ccc
+	ul
+		padding : 0 0 0 20px
+
+
+// start
+.contents
+	padding: 0 50px
+.complex-list-area
+	text-align: center
+	ul
+		display: flex
+		flex-flow: wrap
+		padding: 0
+		margin: 0
+		list-style: none
+	li *
+		line-height: 1.15
+	li
+		position: relative
+		height: 0
+		width: 25%
+		padding-top: 25%
+		color: #fff
+		.item
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: 0
+			left: 0
+			height: 100%
+			width: 100%
+			padding: 10px
+			.tit
+				margin-bottom: 10px
+				font-size: 1.4em
+				font-weight: bold
+			.minor-comment
+				font-style: italic
+			.icon
+				position: relative
+				font-size: 2em
+				&::before, &::after
+					content: ''
+					position: absolute
+					top: 50%
+					width: 20px
+					height: 1px
+					background: #fff
+				&::before
+					left: -25px
+				&::after
+					right: -25px
+	.minor
+		font-size: 0.9em
+		.minor-comment
+			margin-bottom: 10px
+			font-family: Georgia, 'Times New Roman', Times, serif
+	p
+		margin: 0
+
+
+@media screen and (max-width: 479px)
+	.item
+		font-size: 0.85em
+@media screen and (max-width: 959px)
+	.contents
+		padding: 0 30px
+	.complex-list-area
+		ul
+			display: block
+		li
+			width: 100%
+		li:nth-child(2n+2)
+			padding-top: 50%
+		li:nth-child(1), li:nth-child(3)
+			background: $gray-m2
+		li:nth-child(4), li:nth-child(6)
+			background: $gray-m3
+		li:nth-child(2), li:nth-child(5)
+			background: $gray-m1
+		.minor
+			display: none
+
+@media screen and (min-width: 1200px)
+	.wrapper
+		width: 1200px
+
+// @media screen and (max-width: 1199px) and (min-width: 960px)
+
+@media screen and (min-width: 960px)
+	.complex-list-area
+		position: relative
+		height: 0
+		padding-top: 75%
+		ul
+			position: absolute
+			top: 0
+			left: 0
+			flex-direction: column
+			justify-content: flex-start
+			width: 100%
+			height: 100%
+			background: $gray-5
+
+		// ELEGANT SHOES
+		li:nth-child(1)
+			order: 7
+			background: $gray-1
+		// JEANS FOR ADVENTURE
+		// major
+		li:nth-child(2)
+			order: 8
+			padding-top: 50%
+		// CHUCK TAYLORS
+		li:nth-child(3)
+			order: 3
+			background: $gray-3
+		// BASIC BLAZER
+		li:nth-child(4)
+			order: 6
+			background: $gray-4
+		// JAXON HAT
+		li:nth-child(5)
+			order: 4
+			background: $gray-1
+		// HEATHER GREY BASICS
+		// major
+		li:nth-child(6)
+			order: 1
+			padding-top: 75%
+			background: $gray-2
+			.item
+				height: 66.66666%
+				background: $gray-5
+		// @PuspitaMarthaID
+		// minor
+		li:nth-child(7)
+			order: 2
+			background: $gray-2
+		// @Vogue
+		// minor
+		li:nth-child(8)
+			order: 5
+			margin-top: 25%
+			background: $gray-2

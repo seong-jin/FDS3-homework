@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="ko" class="lt-ie8"><![endif]-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>RWD에서 flex를 활용한 복합 List 만들기</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://use.fontawesome.com/c1f341f27c.js" defer></script>
+</head>
+<body>
+
+<div class="wrapper">
+	<h1>RWD에서 flex를 활용한 복합 List 만들기</h1>
+	<div class="description">
+		<p>Breakpoint: 480px, 960px, 1200px</p>
+		<ul>
+			<li>1200px 이상 - 한 줄 당 아이템 4개</li>
+			<li>960px ~ 1199px - 한 줄 당 아이템 4개</li>
+			<li>959px 이하 - 한 줄 당 아이템 1개 / 제목이 있는 아이템만 노출 / 여백</li>
+			<li>480px 이하 - font-size 축소</li>
+		</ul>
+	</div>
+
+	<div class="contents">
+		<div class="complex-list-area">
+			<ul>
+				<li>
+					<div class="item">
+						<p class="tit">ELEGANT SHOES</p>
+						<p class="minor-comment">BRAIDED LEATHER</p>
+					</div>
+				</li>
+				<li class="major first">
+					<div class="item">
+						<p class="tit">JEANS FOR ADVENTURE</p>
+						<p class="minor-comment">NEW ARRIVAL</p>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<p class="tit">CHUCK TAYLORS</p>
+						<p class="minor-comment">$125.00</p>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<p class="tit">BASIC BLAZER</p>
+						<p class="minor-comment">FROM $199.00</p>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<p class="tit">JAXON HAT</p>
+						<p class="minor-comment">BEANIE HAT</p>
+					</div>
+				</li>
+				<li class="major">
+					<div class="item">
+						<p class="tit">HEATHER GREY BASICS</p>
+						<p class="minor-comment">NEW ARRIVAL</p>
+					</div>
+				</li>
+				<li class="minor first">
+					<div class="item">
+						<span class="icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+						<p class="minor-comment">Opening Ceremony @IndonesiaFW tomorrow, PMers! Are you ready for the biggest fashion movement in</p>
+						<p>@PuspitaMarthaID</p>
+					</div>
+				</li>
+				<li class="minor">
+					<div class="item">
+						<span class="icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+						<p class="minor-comment">Girls, Girls, Girls: A Look Back at 50 Years of the Pirelli Calendar</p>
+						<p>@Vogue</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
