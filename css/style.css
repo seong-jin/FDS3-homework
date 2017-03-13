@@ -31,7 +31,7 @@ section{margin-top:3em;}
 .section-comment{padding:0.3em; margin:0; border:1px solid #0295C9;}
 .section-comment div, .section-comment p {padding:1em .5em;}
 .section-comment dl {display:table; table-layout:fixed; width:100%; padding:.5em 0; border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;}
-.section-comment dl + dl {margin-top:-1px;}
+.section-comment dl + dl {border-top: none;}
 .section-comment dl:hover {background:#f6f6f6;}
 .section-comment dt, .section-comment dd {display:table-cell; padding:0 0.5em; vertical-align:middle;}
 .section-comment dt {width:30%; font-weight:bold;}
